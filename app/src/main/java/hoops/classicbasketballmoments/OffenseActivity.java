@@ -16,6 +16,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -35,6 +36,7 @@ public class OffenseActivity extends Activity {
 
     private RelativeLayout mFrame;
     private ImageView mCourt;
+    private TextView mBlurb;
     private int mDisplayWidth, mDisplayHeight;
     private float addToX, addToY;
     float factor;
@@ -53,6 +55,7 @@ public class OffenseActivity extends Activity {
 
         mFrame = (RelativeLayout) findViewById(R.id.frame);
         mCourt = (ImageView) findViewById(R.id.court);
+        mBlurb = (TextView) findViewById(R.id.blurb);
 
         //mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dot);
 
@@ -76,6 +79,7 @@ public class OffenseActivity extends Activity {
         ArrayList<String> playActions = new ArrayList<>();
         try {
             playActions = mParser.getPlay(offenseName, 0, getApplicationContext());
+            mBlurb.setText("SETTING TEXT");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (XmlPullParserException e) {
@@ -159,6 +163,9 @@ public class OffenseActivity extends Activity {
             Log.v(TAG, "0, 0 for image is: " + addToX + ", 0");
         }
         Log.v(TAG, "FACTOR is: " + factor);
+
+        addToX = 0;
+        addToY = 0;
 
     }
 
