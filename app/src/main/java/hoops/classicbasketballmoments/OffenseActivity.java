@@ -371,7 +371,7 @@ public class OffenseActivity extends Activity {
                     PlayerView.this.postInvalidate();
 
                 }
-            }, 1000, REFRESH_RATE, TimeUnit.MILLISECONDS);
+            }, 2500, REFRESH_RATE, TimeUnit.MILLISECONDS);
 
         }
 

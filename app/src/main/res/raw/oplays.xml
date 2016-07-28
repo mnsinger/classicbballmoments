@@ -133,38 +133,49 @@
             <dsg>200,275,steph curry</dsg>
             <dsf>45,115,andre iguodala</dsf>
             <dpf>70,60,harrison barnes</dpf>
-            <dc>70,430,draymond green</dc>
+            <dc>150,430,draymond green</dc>
         </action>
         <action>
             <ball>340,190,12</ball>
             <opg>340,190,kyrie irving</opg>
             <osg>290,215,j.r. smith</osg>
-            <osf>25,25,lebron james</osf>
+            <osf>25,75,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
 
             <dpg>305,205,klay thompson</dpg>
             <dsg>230,210,steph curry</dsg>
-
-            <dsf>45,115,andre iguodala</dsf>
-            <dpf>70,60,harrison barnes</dpf>
-            <dc>70,430,draymond green</dc>
+            <dsf>60,160,andre iguodala</dsf>
+            <dpf>115,60,harrison barnes</dpf>
+            <dc>150,430,draymond green</dc>
         </action>
         <action>
             <ball>335,140,11</ball>
             <opg>335,140,kyrie irving</opg>
             <osg>290,215,j.r. smith</osg>
-            <osf>25,75,lebron james</osf>
+            <osf>25,15,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
+
+            <dpg>295,235,klay thompson</dpg>
+            <dsg>295,130,steph curry</dsg>
+            <dsf>60,160,andre iguodala</dsf>
+            <dpf>115,60,harrison barnes</dpf>
+            <dc>150,430,draymond green</dc>
         </action>
         <action>
             <ball>375,70,10</ball>
             <opg>375,70,kyrie irving</opg>
             <osg>315,240,j.r. smith</osg>
-            <osf>25,75,lebron james</osf>
+            <osf>25,15,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
+
+            <dpg>325,200,klay thompson</dpg>
+            <dsg>330,95,steph curry</dsg>
+            <dsf>35,150,andre iguodala</dsf>
+            <dpf>115,60,harrison barnes</dpf>
+            <dc>150,430,draymond green</dc>
         </action>
         <action>
             <ball>375,70,9</ball>
@@ -173,6 +184,12 @@
             <osf>25,75,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
+
+            <dpg>300,250,klay thompson</dpg>
+            <dsg>320,90,steph curry</dsg>
+            <dsf>35,150,andre iguodala</dsf>
+            <dpf>115,60,harrison barnes</dpf>
+            <dc>150,430,draymond green</dc>
         </action>
         <action>
             <ball>375,70,8</ball>
@@ -181,6 +198,12 @@
             <osf>25,75,lebron james</osf>
             <opf>75,95,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
+
+            <dpg>260,275,klay thompson</dpg>
+            <dsg>320,85,steph curry</dsg>
+            <dsf>35,150,andre iguodala</dsf>
+            <dpf>110,90,harrison barnes</dpf>
+            <dc>150,430,draymond green</dc>
         </action>
         <action>
             <ball>375,70,7</ball>
@@ -189,6 +212,12 @@
             <osf>25,15,lebron james</osf>
             <opf>35,185,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
+
+            <dpg>235,300,klay thompson</dpg>
+            <dsg>310,95,steph curry</dsg>
+            <dsf>75,75,andre iguodala</dsf>
+            <dpf>110,90,harrison barnes</dpf>
+            <dc>85,370,draymond green</dc>
         </action>
         <action>
             <ball>325,70,6</ball>
@@ -197,6 +226,12 @@
             <osf>25,15,lebron james</osf>
             <opf>30,320,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
+
+            <dpg>235,300,klay thompson</dpg>
+            <dsg>275,100,steph curry</dsg>
+            <dsf>75,75,andre iguodala</dsf>
+            <dpf>50,230,harrison barnes</dpf>
+            <dc>85,320,draymond green</dc>
         </action>
         <action>
             <ball>245,60,5</ball>
@@ -205,6 +240,12 @@
             <osf>25,15,lebron james</osf>
             <opf>40,420,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
+
+            <dpg>235,300,klay thompson</dpg>
+            <dsg>200,90,steph curry</dsg>
+            <dsf>75,75,andre iguodala</dsf>
+            <dpf>50,330,harrison barnes</dpf>
+            <dc>85,320,draymond green</dc>
         </action>
         <action>
             <ball>125,175,4</ball>
@@ -213,6 +254,12 @@
             <osf>25,15,lebron james</osf>
             <opf>40,420,richard jefferson</opf>
             <oc>125,325,kevin love</oc>
+
+            <dpg>235,300,klay thompson</dpg>
+            <dsg>200,90,steph curry</dsg>
+            <dsf>75,75,andre iguodala</dsf>
+            <dpf>50,330,harrison barnes</dpf>
+            <dc>85,320,draymond green</dc>
         </action>
         <action>
             <ball>35,250,3</ball>
@@ -221,6 +268,12 @@
             <osf>25,15,lebron james</osf>
             <opf>40,420,richard jefferson</opf>
             <oc>110,265,kevin love</oc>
+
+            <dpg>150,235,klay thompson</dpg>
+            <dsg>200,90,steph curry</dsg>
+            <dsf>75,75,andre iguodala</dsf>
+            <dpf>75,290,harrison barnes</dpf>
+            <dc>90,270,draymond green</dc>
         </action>
     </entry>
     <entry>
