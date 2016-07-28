@@ -91,25 +91,45 @@ public class OffenseActivity extends Activity {
             e.printStackTrace();
         }
 
-        ArrayList<String> playActionsP1 = new ArrayList<>();
-        ArrayList<String> playActionsP2 = new ArrayList<>();
-        ArrayList<String> playActionsP3 = new ArrayList<>();
-        ArrayList<String> playActionsP4 = new ArrayList<>();
-        ArrayList<String> playActionsP5 = new ArrayList<>();
+        ArrayList<String> playActionsO1 = new ArrayList<>();
+        ArrayList<String> playActionsO2 = new ArrayList<>();
+        ArrayList<String> playActionsO3 = new ArrayList<>();
+        ArrayList<String> playActionsO4 = new ArrayList<>();
+        ArrayList<String> playActionsO5 = new ArrayList<>();
+
+        ArrayList<String> playActionsD1 = new ArrayList<>();
+        ArrayList<String> playActionsD2 = new ArrayList<>();
+        ArrayList<String> playActionsD3 = new ArrayList<>();
+        ArrayList<String> playActionsD4 = new ArrayList<>();
+        ArrayList<String> playActionsD5 = new ArrayList<>();
+
         ArrayList<String> playActionsBall = new ArrayList<>();
 
         for (String action : playActions) {
             Log.v(TAG, "ACTION IS: " + action);
+
             if (action.split(",")[0].equals("opg"))
-                playActionsP1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
             else if (action.split(",")[0].equals("osg"))
-                playActionsP2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
             else if (action.split(",")[0].equals("osf"))
-                playActionsP3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
             else if (action.split(",")[0].equals("opf"))
-                playActionsP4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
             else if (action.split(",")[0].equals("oc"))
-                playActionsP5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+
+            else if (action.split(",")[0].equals("dpg"))
+                playActionsD1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+            else if (action.split(",")[0].equals("dsg"))
+                playActionsD2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+            else if (action.split(",")[0].equals("dsf"))
+                playActionsD3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+            else if (action.split(",")[0].equals("dpf"))
+                playActionsD4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+            else if (action.split(",")[0].equals("dc"))
+                playActionsD5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+
             else if (action.split(",")[0].equals("ball"))
                 playActionsBall.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 //playActionsBall.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
@@ -121,26 +141,46 @@ public class OffenseActivity extends Activity {
         int dPlayer = R.drawable.ddot;
         int ball = R.drawable.ball;
 
-        PlayerView p1 = new PlayerView(getApplicationContext(), playActionsP1, oPlayer);
-        PlayerView p2 = new PlayerView(getApplicationContext(), playActionsP2, oPlayer);
-        PlayerView p3 = new PlayerView(getApplicationContext(), playActionsP3, oPlayer);
-        PlayerView p4 = new PlayerView(getApplicationContext(), playActionsP4, oPlayer);
-        PlayerView p5 = new PlayerView(getApplicationContext(), playActionsP5, oPlayer);
+        PlayerView o1 = new PlayerView(getApplicationContext(), playActionsO1, oPlayer);
+        PlayerView o2 = new PlayerView(getApplicationContext(), playActionsO2, oPlayer);
+        PlayerView o3 = new PlayerView(getApplicationContext(), playActionsO3, oPlayer);
+        PlayerView o4 = new PlayerView(getApplicationContext(), playActionsO4, oPlayer);
+        PlayerView o5 = new PlayerView(getApplicationContext(), playActionsO5, oPlayer);
+
+        PlayerView d1 = new PlayerView(getApplicationContext(), playActionsD1, dPlayer);
+        PlayerView d2 = new PlayerView(getApplicationContext(), playActionsD2, dPlayer);
+        PlayerView d3 = new PlayerView(getApplicationContext(), playActionsD3, dPlayer);
+        PlayerView d4 = new PlayerView(getApplicationContext(), playActionsD4, dPlayer);
+        PlayerView d5 = new PlayerView(getApplicationContext(), playActionsD5, dPlayer);
 
         PlayerView ballV = new PlayerView(getApplicationContext(), playActionsBall, ball);
 
-        mFrame.addView(p1);
-        mFrame.addView(p2);
-        mFrame.addView(p3);
-        mFrame.addView(p4);
-        mFrame.addView(p5);
+        mFrame.addView(o1);
+        mFrame.addView(o2);
+        mFrame.addView(o3);
+        mFrame.addView(o4);
+        mFrame.addView(o5);
+
+        mFrame.addView(d1);
+        mFrame.addView(d2);
+        mFrame.addView(d3);
+        mFrame.addView(d4);
+        mFrame.addView(d5);
+
         mFrame.addView(ballV);
 
-        p1.start();
-        p2.start();
-        p3.start();
-        p4.start();
-        p5.start();
+        o1.start();
+        o2.start();
+        o3.start();
+        o4.start();
+        o5.start();
+
+        d1.start();
+        d2.start();
+        d3.start();
+        d4.start();
+        d5.start();
+
         ballV.start();
 
     }

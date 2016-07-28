@@ -131,6 +131,25 @@ public class PlayXMLParser {
         return entry;
     }*/
 
+    private boolean isValidAction(String action) {
+        switch (action) {
+            case "ball":
+            case "opg":
+            case "dpg":
+            case "osg":
+            case "dsg":
+            case "osf":
+            case "dsf":
+            case "opf":
+            case "dpf":
+            case "oc":
+            case "dc":
+                return true;
+            default:
+                return false;
+        }
+    }
+
     private ArrayList<String> readActions(XmlPullParser parser) throws XmlPullParserException, IOException {
         ArrayList<String> entry = new ArrayList<>();
         Log.v(TAG, "in readActions 1. current xml tag is = " + parser.getName());
@@ -142,7 +161,7 @@ public class PlayXMLParser {
                 }
                 String name = parser.getName();
                 Log.v(TAG, "in readActions 2. current xml tag name is = " + name);
-                if (name.equals("ball") || name.equals("opg") || name.equals("osg") || name.equals("osf") || name.equals("opf") || name.equals("oc"))
+                if (isValidAction(name))
                     entry.add(name + "," + read(parser, name));
             }
             // new

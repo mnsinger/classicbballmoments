@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--     android:background="@drawable/offense_court" -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/frame"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitStart"
         android:src="@drawable/basket_left"
         android:id="@+id/court"
-        android:adjustViewBounds="true"
-        />
+        android:adjustViewBounds="true"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +22,8 @@
         android:textSize="12sp"
         android:autoLink="web"
         android:paddingTop="12sp"
-        />
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -33,10 +33,7 @@
         android:textColor="#000000"
         android:autoLink="web"
         android:textSize="12sp"
-        android:textStyle="bold" />
-    <!--TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"
-        android:id="@+id/shot_clock"/-->
+        android:textStyle="bold"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"/>
 </RelativeLayout>
