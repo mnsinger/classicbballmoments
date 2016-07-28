@@ -14,12 +14,24 @@
         android:adjustViewBounds="true"
         />
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/link"
+        android:layout_below="@+id/court"
+        android:text="aaaaaaaaaaaaaaaaaaaaa"
+        android:textSize="12sp"
+        android:autoLink="web"
+        android:paddingTop="12sp"
+        />
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:text="text here"
-        android:layout_below="@id/court"
+        android:layout_below="@id/link"
         android:id="@+id/blurb"
-        android:textColor="#ff0000"
+        android:textColor="#000000"
+        android:autoLink="web"
         android:textSize="12sp"
         android:textStyle="bold" />
     <!--TextView

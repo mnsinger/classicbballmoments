@@ -9,12 +9,14 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -36,7 +38,7 @@ public class OffenseActivity extends Activity {
 
     private RelativeLayout mFrame;
     private ImageView mCourt;
-    private TextView mBlurb;
+    private TextView mBlurb, mLink;
     private int mDisplayWidth, mDisplayHeight;
     private float addToX, addToY;
     float factor;
@@ -55,6 +57,7 @@ public class OffenseActivity extends Activity {
 
         mFrame = (RelativeLayout) findViewById(R.id.frame);
         mCourt = (ImageView) findViewById(R.id.court);
+        mLink = (TextView) findViewById(R.id.link);
         mBlurb = (TextView) findViewById(R.id.blurb);
 
         //mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dot);
@@ -79,7 +82,9 @@ public class OffenseActivity extends Activity {
         ArrayList<String> playActions = new ArrayList<>();
         try {
             playActions = mParser.getPlay(offenseName, 0, getApplicationContext());
-            mBlurb.setText("SETTING TEXT");
+            //String text = Html.fromHtml("<center>" + mParser.mUrl + "</center>" +  "<br/>");
+            mLink.setText(mParser.mUrl);
+            mBlurb.setText(Html.fromHtml("<br/>More text here..."));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (XmlPullParserException e) {
@@ -142,10 +147,12 @@ public class OffenseActivity extends Activity {
 
     public void adjustPositioningForScreen() {
         int mCourtWidth = 470, mCourtHeight = 500;
+
         if (mFrame.getWidth() != 0 && mFrame.getHeight() != 0) {
             mDisplayWidth = mFrame.getWidth();
             mDisplayHeight = mFrame.getHeight();
         }
+
         // Upright view
         // Court width  == DisplayWidth
         // Court height == (DisplayWidth / 470) * 500
@@ -163,6 +170,20 @@ public class OffenseActivity extends Activity {
             Log.v(TAG, "0, 0 for image is: " + addToX + ", 0");
         }
         Log.v(TAG, "FACTOR is: " + factor);
+
+        int orientation = getResources().getConfiguration().orientation;
+        Log.v(TAG, "Orientation is... " + orientation);
+
+        if (orientation == 2) {
+            //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(Math.round(mCourtWidth*factor), Math.round(mCourtHeight*factor));
+            //mCourt.setLayoutParams(layoutParams);
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(Math.round(mCourtWidth*factor), Math.round(mCourtHeight*factor));
+            mCourt.setLayoutParams(layoutParams);
+        }
+        //
+        //touched_image_view.setLayoutParams(layoutParams);
+
+
 
         addToX = 0;
         addToY = 0;

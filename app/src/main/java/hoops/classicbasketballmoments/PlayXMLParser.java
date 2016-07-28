@@ -85,14 +85,15 @@ public class PlayXMLParser {
 
                     Log.v(TAG, name + " = " + mPlayName);
                     // id tag
-                    Log.v(TAG, "in readEntry. current xml tag is = " + parser.getName());
+                    Log.v(TAG, "1 in readEntry. current xml tag is = " + parser.getName());
 
                     // null tag
                     parser.next();
-                    Log.v(TAG, "in readEntry. current xml tag is = " + parser.getName());
+                    Log.v(TAG, "2 in readEntry. current xml tag is = " + parser.getName());
 
                     //action or url tag
                     parser.next();
+                    Log.v(TAG, "3 in readEntry. current xml tag is = " + parser.getName());
 
                     if (parser.getName().equals("url")) {
                         mUrl = readText(parser);
@@ -103,7 +104,7 @@ public class PlayXMLParser {
                         parser.next();
                     }
 
-                    Log.v(TAG, "in readEntry. current xml tag is = " + parser.getName());
+                    Log.v(TAG, "4 in readEntry. current xml tag is = " + parser.getName());
                     return readActions(parser);
                 } //else
                     //skip(parser);
