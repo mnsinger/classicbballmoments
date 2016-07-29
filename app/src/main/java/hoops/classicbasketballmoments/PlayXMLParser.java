@@ -23,6 +23,7 @@ public class PlayXMLParser {
     private boolean exitFlag = false;
     String mPlayName = "";
     String mUrl = "";
+    String mBlurb = "";
 
     public ArrayList<String> getPlay(String mPlayName, int offenseOrDefense, Context mContext) throws IOException, XmlPullParserException {
 
@@ -91,18 +92,24 @@ public class PlayXMLParser {
                     parser.next();
                     Log.v(TAG, "2 in readEntry. current xml tag is = " + parser.getName());
 
-                    //action or url tag
+                    //url tag
                     parser.next();
                     Log.v(TAG, "3 in readEntry. current xml tag is = " + parser.getName());
 
-                    if (parser.getName().equals("url")) {
+                    //if (parser.getName().equals("url")) {
                         mUrl = readText(parser);
                         Log.v(TAG, "URL = " + mUrl);
                         // null tag
                         parser.next();
-                        // action tag
+                        // blurb tag
                         parser.next();
-                    }
+
+                    mBlurb = readText(parser);
+
+                    parser.next();
+
+                    parser.next();
+                    //}
 
                     Log.v(TAG, "4 in readEntry. current xml tag is = " + parser.getName());
                     return readActions(parser);

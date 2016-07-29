@@ -84,7 +84,7 @@ public class OffenseActivity extends Activity {
             playActions = mParser.getPlay(offenseName, 0, getApplicationContext());
             //String text = Html.fromHtml("<center>" + mParser.mUrl + "</center>" +  "<br/>");
             mLink.setText(mParser.mUrl);
-            mBlurb.setText(Html.fromHtml("<br/>More text here..."));
+            mBlurb.setText(Html.fromHtml(mParser.mBlurb));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (XmlPullParserException e) {
@@ -225,8 +225,8 @@ public class OffenseActivity extends Activity {
 
 
 
-        addToX = 0;
-        addToY = 0;
+        addToX = 3;
+        addToY = 3;
 
     }
 
@@ -256,7 +256,6 @@ public class OffenseActivity extends Activity {
         PlayerView(Context context, ArrayList<String> playList, int bitmapResId) {
             super(context);
 
-//            mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.odot);
             mBitmap = BitmapFactory.decodeResource(getResources(), bitmapResId);
             this.bitmapResId = bitmapResId;
             playerSize = Math.round(mBitmap.getHeight() * factor);
@@ -269,15 +268,6 @@ public class OffenseActivity extends Activity {
 
             this.x = xCalc();
             this.y = yCalc();
-
-            // scale the x and y coordinates to stretched court
-            // add values to move past extra screen space
-            //this.x = (*factor) + addToX;
-            //this.y = (*factor) + addToY;
-
-            // center the point at middle of bitmap
-            //this.x -= (factor*mBitmap.getHeight())/2;
-            //this.y -= (factor*mBitmap.getHeight())/2;
 
             Log.v(TAG, "initial x and y pos: " + x + " and " + y);
 
