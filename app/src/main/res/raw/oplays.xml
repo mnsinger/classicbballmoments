@@ -2,9 +2,10 @@
     <entry>
         <id>2016 NBA Finals, Game 7, 4th Quarter, 1:09</id>
         <url>https://www.youtube.com/watch?v=0-yh0hf7sBU</url>
-        <blurb>With 1:09 remaining in the 4th quarter of game 7, LeBron James inbounds the ball to Kyrie Irving who is guarded by Klay Thompson, who is a strong defender.
-            J.R. Smith sets a high screen with the purpose of causing a switch so Stephen Curry would be forced to guard Kyrie Irving instead of Klay Thompson. Kyrie gets
-            the isolation against Curry on the wing and hits a contested 3 to put Cleveland up for good.</blurb>
+        <court>left</court>
+        <blurb>With 1:09 remaining in the 4th quarter of game 7, and the score tied at 89, LeBron James inbounds the ball. He passes to Kyrie Irving who is guarded by Klay Thompson, a strong defender.
+            J.R. Smith sets a high screen with the purpose of causing a defensive switch so Stephen Curry would be forced to guard Kyrie Irving instead of Klay Thompson. Kyrie gets
+            the isolation against Curry on the right wing and hits a contested 3 to put Cleveland up for good.</blurb>
         <action>
             <ball>315,500,19</ball>
             <opg>315,400,kyrie irving</opg>
@@ -12,6 +13,7 @@
             <osf>315,500,lebron james</osf>
             <opf>60,15,richard jefferson</opf>
             <oc>10,300,kevin love</oc>
+
             <dpg>285,400,klay thompson</dpg>
             <dsg>170,250,steph curry</dsg>
             <dsf>275,450,andre iguodala</dsf>
@@ -25,6 +27,7 @@
             <osf>315,500,lebron james</osf>
             <opf>60,15,richard jefferson</opf>
             <oc>10,300,kevin love</oc>
+
             <dpg>285,400,klay thompson</dpg>
             <dsg>170,250,steph curry</dsg>
             <dsf>275,450,andre iguodala</dsf>
@@ -38,6 +41,7 @@
             <osf>315,500,lebron james</osf>
             <opf>60,15,richard jefferson</opf>
             <oc>10,300,kevin love</oc>
+
             <dpg>285,400,klay thompson</dpg>
             <dsg>170,250,steph curry</dsg>
             <dsf>275,450,andre iguodala</dsf>
@@ -51,6 +55,7 @@
             <osf>325,450,lebron james</osf>
             <opf>60,15,richard jefferson</opf>
             <oc>10,300,kevin love</oc>
+
             <dpg>285,400,klay thompson</dpg>
             <dsg>170,250,steph curry</dsg>
             <dsf>275,450,andre iguodala</dsf>
@@ -64,6 +69,7 @@
             <osf>275,375,lebron james</osf>
             <opf>60,15,richard jefferson</opf>
             <oc>10,350,kevin love</oc>
+
             <dpg>285,400,klay thompson</dpg>
             <dsg>170,250,steph curry</dsg>
             <dsf>245,350,andre iguodala</dsf>
@@ -77,6 +83,7 @@
             <osf>170,375,lebron james</osf>
             <opf>60,15,richard jefferson</opf>
             <oc>10,400,kevin love</oc>
+
             <dpg>330,370,klay thompson</dpg>
             <dsg>190,250,steph curry</dsg>
             <dsf>200,320,andre iguodala</dsf>
@@ -90,6 +97,7 @@
             <osf>100,275,lebron james</osf>
             <opf>60,15,richard jefferson</opf>
             <oc>50,450,kevin love</oc>
+
             <dpg>325,325,klay thompson</dpg>
             <dsg>190,250,steph curry</dsg>
             <dsf>130,280,andre iguodala</dsf>
@@ -265,7 +273,7 @@
             <dc>85,320,draymond green</dc>
         </action>
         <action>
-            <ball>35,250,3</ball>
+            <ball>36,250,3</ball>
             <opg>245,60,kyrie irving</opg>
             <osg>315,345,j.r. smith</osg>
             <osf>25,15,lebron james</osf>
@@ -280,30 +288,445 @@
         </action>
     </entry>
     <entry>
-        <id>Princeton</id>
+        <id>2013 NBA Finals, Game 7, 4th Quarter, :39</id>
+        <url>https://www.youtube.com/watch?v=YRIMQi7X7mI&amp;t=0m47s</url>
+        <court>right</court>
+        <blurb>With :39 remaining in the 4th quarter of game 7, and the score at 90-88 in favor of Miami, Dwyane Wade inbounds the ball. Mario Chalmers sets a screen and Chris Bosh and
+            Shane Battier run some kind of criss-cross to allow LeBron to get the ball at the top of the key. After the inbounds, the play is a high pick and pop with Mario Chalmers
+            coming from the block up and
+            setting a screen at the foul line on Kawhi Leonard. Chalmers almost blows it by setting the screen too early and Tony Parker notices the error and attempt to overplay for it.
+            Parker shows on the screen and recovers back to Chalmers and Leonard gets a decent contest on LeBron's jumper but he hits the shot and puts Miami up by 4 with under 30 seconds left.
+        </blurb>
         <action>
-            <ball>100,400</ball>
-            <opg>425,200</opg>
-            <osg>200,400</osg>
-            <osf>300,400</osf>
-            <opf>400,400</opf>
-            <oc>100,400</oc>
+            <ball>195,500,14</ball>
+            <opg>210,250,mario chalmers</opg>
+            <osg>195,500,dwyane wade</osg>
+            <osf>290,195,lebron james</osf>
+            <opf>120,125,shane battier</opf>
+            <oc>125,360,chris bosh</oc>
+
+            <dpg>245,275,tony parker</dpg>
+            <dsg>265,435,manu ginobili</dsg>
+            <dsf>345,225,kawhi leonard</dsf>
+            <dpf>250,170,danny green</dpf>
+            <dc>220,350,tim duncan</dc>
         </action>
         <action>
-            <ball>100,400</ball>
-            <opg>435,200</opg>
-            <osg>200,400</osg>
-            <osf>300,400</osf>
-            <opf>400,400</opf>
-            <oc>100,400</oc>
+            <ball>195,500,14</ball>
+            <opg>210,250,mario chalmers</opg>
+            <osg>195,500,dwyane wade</osg>
+            <osf>210,200,lebron james</osf>
+            <opf>170,200,shane battier</opf>
+            <oc>150,295,chris bosh</oc>
+
+            <dpg>245,275,tony parker</dpg>
+            <dsg>260,450,manu ginobili</dsg>
+            <dsf>320,230,kawhi leonard</dsf>
+            <dpf>280,185,danny green</dpf>
+            <dc>200,350,tim duncan</dc>
         </action>
         <action>
-            <ball>100,400</ball>
-            <opg>445,200</opg>
-            <osg>200,400</osg>
-            <osf>300,400</osf>
-            <opf>400,400</opf>
-            <oc>100,400</oc>
+            <ball>140,310,14</ball>
+            <opg>230,250,mario chalmers</opg>
+            <osg>195,500,dwyane wade</osg>
+            <osf>125,240,lebron james</osf>
+            <opf>170,200,shane battier</opf>
+            <oc>190,210,chris bosh</oc>
+
+            <dpg>245,255,tony parker</dpg>
+            <dsg>260,450,manu ginobili</dsg>
+            <dsf>290,225,kawhi leonard</dsf>
+            <dpf>340,250,danny green</dpf>
+            <dc>270,300,tim duncan</dc>
+        </action>
+        <action>
+            <ball>85,260,14</ball>
+            <opg>295,250,mario chalmers</opg>
+            <osg>210,465,dwyane wade</osg>
+            <osf>85,260,lebron james</osf>
+            <opf>290,365,shane battier</opf>
+            <oc>230,160,chris bosh</oc>
+
+            <dpg>270,250,tony parker</dpg>
+            <dsg>290,425,manu ginobili</dsg>
+            <dsf>290,225,kawhi leonard</dsf>
+            <dpf>350,290,danny green</dpf>
+            <dc>255,280,tim duncan</dc>
+        </action>
+        <action>
+            <ball>85,260,13</ball>
+            <opg>370,265,mario chalmers</opg>
+            <osg>260,465,dwyane wade</osg>
+            <osf>85,260,lebron james</osf>
+            <opf>390,400,shane battier</opf>
+            <oc>320,60,chris bosh</oc>
+
+            <dpg>350,245,tony parker</dpg>
+            <dsg>340,385,manu ginobili</dsg>
+            <dsf>230,260,kawhi leonard</dsf>
+            <dpf>400,365,danny green</dpf>
+            <dc>390,180,tim duncan</dc>
+        </action>
+        <action>
+            <ball>100,185,12</ball>
+            <opg>290,270,mario chalmers</opg>
+            <osg>295,475,dwyane wade</osg>
+            <osf>100,185,lebron james</osf>
+            <opf>430,465,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>340,285,tony parker</dpg>
+            <dsg>390,365,manu ginobili</dsg>
+            <dsf>240,225,kawhi leonard</dsf>
+            <dpf>400,365,danny green</dpf>
+            <dc>400,140,tim duncan</dc>
+        </action>
+        <action>
+            <ball>100,160,11</ball>
+            <opg>290,270,mario chalmers</opg>
+            <osg>390,485,dwyane wade</osg>
+            <osf>100,160,lebron james</osf>
+            <opf>430,485,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>280,290,tony parker</dpg>
+            <dsg>395,375,manu ginobili</dsg>
+            <dsf>265,205,kawhi leonard</dsf>
+            <dpf>430,365,danny green</dpf>
+            <dc>400,140,tim duncan</dc>
+        </action>
+        <action>
+            <ball>100,125,10</ball>
+            <opg>365,290,mario chalmers</opg>
+            <osg>430,470,dwyane wade</osg>
+            <osf>100,125,lebron james</osf>
+            <opf>380,485,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>305,295,tony parker</dpg>
+            <dsg>400,370,manu ginobili</dsg>
+            <dsf>250,180,kawhi leonard</dsf>
+            <dpf>400,400,danny green</dpf>
+            <dc>400,140,tim duncan</dc>
+        </action>
+        <action>
+            <ball>100,125,9</ball>
+            <opg>390,315,mario chalmers</opg>
+            <osg>440,480,dwyane wade</osg>
+            <osf>100,125,lebron james</osf>
+            <opf>345,485,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>325,300,tony parker</dpg>
+            <dsg>420,365,manu ginobili</dsg>
+            <dsf>230,180,kawhi leonard</dsf>
+            <dpf>360,385,danny green</dpf>
+            <dc>400,140,tim duncan</dc>
+        </action>
+        <action>
+            <ball>105,150,8</ball>
+            <opg>335,300,mario chalmers</opg>
+            <osg>440,480,dwyane wade</osg>
+            <osf>105,150,lebron james</osf>
+            <opf>345,485,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>350,270,tony parker</dpg>
+            <dsg>420,365,manu ginobili</dsg>
+            <dsf>230,180,kawhi leonard</dsf>
+            <dpf>360,385,danny green</dpf>
+            <dc>400,140,tim duncan</dc>
+        </action>
+        <action>
+            <ball>145,205,7</ball>
+            <opg>275,225,mario chalmers</opg>
+            <osg>440,480,dwyane wade</osg>
+            <osf>145,205,lebron james</osf>
+            <opf>345,485,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>265,265,tony parker</dpg>
+            <dsg>420,365,manu ginobili</dsg>
+            <dsf>245,190,kawhi leonard</dsf>
+            <dpf>350,360,danny green</dpf>
+            <dc>400,140,tim duncan</dc>
+        </action>
+        <action>
+            <ball>200,295,6</ball>
+            <opg>230,165,mario chalmers</opg>
+            <osg>440,480,dwyane wade</osg>
+            <osf>200,295,lebron james</osf>
+            <opf>345,485,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>215,290,tony parker</dpg>
+            <dsg>420,365,manu ginobili</dsg>
+            <dsf>240,260,kawhi leonard</dsf>
+            <dpf>350,360,danny green</dpf>
+            <dc>400,150,tim duncan</dc>
+        </action>
+        <action>
+            <ball>345,325,5</ball>
+            <opg>190,100,mario chalmers</opg>
+            <osg>460,400,dwyane wade</osg>
+            <osf>240,340,lebron james</osf>
+            <opf>345,485,shane battier</opf>
+            <oc>410,15,chris bosh</oc>
+
+            <dpg>235,215,tony parker</dpg>
+            <dsg>420,365,manu ginobili</dsg>
+            <dsf>300,315,kawhi leonard</dsf>
+            <dpf>350,360,danny green</dpf>
+            <dc>400,180,tim duncan</dc>
+        </action>
+        <action>
+            <ball>432,250,4</ball>
+            <opg>190,100,mario chalmers</opg>
+            <osg>440,330,dwyane wade</osg>
+            <osf>245,360,lebron james</osf>
+            <opf>290,370,shane battier</opf>
+            <oc>400,85,chris bosh</oc>
+
+            <dpg>290,180,tony parker</dpg>
+            <dsg>420,305,manu ginobili</dsg>
+            <dsf>245,335,kawhi leonard</dsf>
+            <dpf>395,300,danny green</dpf>
+            <dc>400,180,tim duncan</dc>
+        </action>
+    </entry>
+    <entry>
+        <id>2011 NBA Finals, Game 2, 4th Quarter, :34</id>
+        <url>https://www.youtube.com/watch?v=XdfYicoAaBQ&amp;t=2m50s</url>
+        <court>right</court>
+        <blurb>With :35 remaining in the 4th quarter of game 2, and the score tied at 90, Jason Kidd leads the quasi fast break near half court
+            and is guarded by Mario Chalmers.
+            Kidd passes to Jason Terry on the left wing, while both Nowitzki and Chandler set staggered screens near Terry. Chalmers and LeBron have some trouble getting through
+            the screens. Once Terry reaches mid-court, Chandler sets another screen on Udonis Haslem who is guarding Nowitzki which gives Dirk a great look that he knocks down.
+            This puts the Mavs up by 3 and they win the game.
+        </blurb>
+        <action>
+            <ball>65,155,21</ball>
+            <opg>65,155,jason kidd</opg>
+            <osg>235,35,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>130,155,dirk nowitzki</opf>
+            <oc>0,250,tyson chandler</oc>
+
+            <dpg>150,200,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>245,65,lebron james</dsf>
+            <dpf>190,190,udonis haslem</dpf>
+            <dc>30,200,chris bosh</dc>
+        </action>
+        <action>
+            <ball>125,80,21</ball>
+            <opg>65,155,jason kidd</opg>
+            <osg>235,35,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>130,155,dirk nowitzki</opf>
+            <oc>0,250,tyson chandler</oc>
+
+            <dpg>150,200,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>245,65,lebron james</dsf>
+            <dpf>190,190,udonis haslem</dpf>
+            <dc>30,200,chris bosh</dc>
+        </action>
+        <action>
+            <ball>180,20,20</ball>
+            <opg>100,75,jason kidd</opg>
+            <osg>180,20,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>220,190,dirk nowitzki</opf>
+            <oc>60,250,tyson chandler</oc>
+
+            <dpg>215,150,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>265,65,lebron james</dsf>
+            <dpf>250,190,udonis haslem</dpf>
+            <dc>140,230,chris bosh</dc>
+        </action>
+        <action>
+            <ball>180,20,20</ball>
+            <opg>100,75,jason kidd</opg>
+            <osg>180,20,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>220,190,dirk nowitzki</opf>
+            <oc>60,250,tyson chandler</oc>
+
+            <dpg>215,150,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>265,65,lebron james</dsf>
+            <dpf>250,190,udonis haslem</dpf>
+            <dc>140,230,chris bosh</dc>
+        </action>
+        <action>
+            <ball>180,20,19</ball>
+            <opg>125,240,jason kidd</opg>
+            <osg>180,20,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>225,130,dirk nowitzki</opf>
+            <oc>185,185,tyson chandler</oc>
+
+            <dpg>190,145,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>215,60,lebron james</dsf>
+            <dpf>260,130,udonis haslem</dpf>
+            <dc>240,240,chris bosh</dc>
+        </action>
+        <action>
+            <ball>180,20,19</ball>
+            <opg>125,240,jason kidd</opg>
+            <osg>180,20,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>225,130,dirk nowitzki</opf>
+            <oc>185,185,tyson chandler</oc>
+
+            <dpg>190,145,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>215,60,lebron james</dsf>
+            <dpf>260,130,udonis haslem</dpf>
+            <dc>240,240,chris bosh</dc>
+        </action>
+        <action>
+            <ball>110,150,18</ball>
+            <opg>130,340,jason kidd</opg>
+            <osg>110,150,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>190,95,dirk nowitzki</opf>
+            <oc>155,200,tyson chandler</oc>
+
+            <dpg>180,230,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>175,125,lebron james</dsf>
+            <dpf>230,120,udonis haslem</dpf>
+            <dc>215,225,chris bosh</dc>
+        </action>
+        <action>
+            <ball>110,150,18</ball>
+            <opg>130,340,jason kidd</opg>
+            <osg>110,150,jason terry</osg>
+            <osf>420,400,shawn marion</osf>
+            <opf>190,95,dirk nowitzki</opf>
+            <oc>155,200,tyson chandler</oc>
+
+            <dpg>180,230,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>175,125,lebron james</dsf>
+            <dpf>230,120,udonis haslem</dpf>
+            <dc>215,225,chris bosh</dc>
+        </action>
+        <action>
+            <ball>120,250,17</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>240,110,dirk nowitzki</opf>
+            <oc>165,175,tyson chandler</oc>
+
+            <dpg>250,280,mario chalmers</dpg>
+            <dsg>410,330,dwayne wade</dsg>
+            <dsf>210,195,lebron james</dsf>
+            <dpf>275,120,udonis haslem</dpf>
+            <dc>245,245,chris bosh</dc>
+        </action>
+        <action>
+            <ball>120,250,17</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>240,110,dirk nowitzki</opf>
+            <oc>165,175,tyson chandler</oc>
+
+            <dpg>250,280,mario chalmers</dpg>
+            <dsg>410,330,dwayne wade</dsg>
+            <dsf>210,195,lebron james</dsf>
+            <dpf>275,120,udonis haslem</dpf>
+            <dc>245,245,chris bosh</dc>
+        </action>
+        <action>
+            <ball>190,120,16</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>190,120,dirk nowitzki</opf>
+            <oc>240,145,tyson chandler</oc>
+
+            <dpg>275,350,mario chalmers</dpg>
+            <dsg>410,310,dwayne wade</dsg>
+            <dsf>195,245,lebron james</dsf>
+            <dpf>275,140,udonis haslem</dpf>
+            <dc>280,200,chris bosh</dc>
+        </action>
+        <action>
+            <ball>190,120,16</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>190,120,dirk nowitzki</opf>
+            <oc>240,145,tyson chandler</oc>
+
+            <dpg>275,350,mario chalmers</dpg>
+            <dsg>410,310,dwayne wade</dsg>
+            <dsf>195,245,lebron james</dsf>
+            <dpf>275,140,udonis haslem</dpf>
+            <dc>280,200,chris bosh</dc>
+        </action>
+        <action>
+            <ball>320,200,15</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>190,120,dirk nowitzki</opf>
+            <oc>240,145,tyson chandler</oc>
+
+            <dpg>275,350,mario chalmers</dpg>
+            <dsg>410,310,dwayne wade</dsg>
+            <dsf>250,250,lebron james</dsf>
+            <dpf>275,140,udonis haslem</dpf>
+            <dc>280,200,chris bosh</dc>
+        </action>
+        <action>
+            <ball>320,200,15</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>190,120,dirk nowitzki</opf>
+            <oc>240,145,tyson chandler</oc>
+
+            <dpg>275,350,mario chalmers</dpg>
+            <dsg>410,310,dwayne wade</dsg>
+            <dsf>250,250,lebron james</dsf>
+            <dpf>275,140,udonis haslem</dpf>
+            <dc>280,200,chris bosh</dc>
+        </action>
+        <action>
+            <ball>430,250,14</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>190,120,dirk nowitzki</opf>
+            <oc>240,145,tyson chandler</oc>
+
+            <dpg>275,350,mario chalmers</dpg>
+            <dsg>410,310,dwayne wade</dsg>
+            <dsf>250,250,lebron james</dsf>
+            <dpf>275,140,udonis haslem</dpf>
+            <dc>280,200,chris bosh</dc>
+        </action>
+        <action>
+            <ball>430,250,14</ball>
+            <opg>200,410,jason kidd</opg>
+            <osg>120,250,jason terry</osg>
+            <osf>400,350,shawn marion</osf>
+            <opf>190,120,dirk nowitzki</opf>
+            <oc>240,145,tyson chandler</oc>
+
+            <dpg>275,350,mario chalmers</dpg>
+            <dsg>410,310,dwayne wade</dsg>
+            <dsf>250,250,lebron james</dsf>
+            <dpf>275,140,udonis haslem</dpf>
+            <dc>280,200,chris bosh</dc>
         </action>
     </entry>
 </feed>

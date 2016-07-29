@@ -24,6 +24,7 @@ public class PlayXMLParser {
     String mPlayName = "";
     String mUrl = "";
     String mBlurb = "";
+    String mCourt = "";
 
     public ArrayList<String> getPlay(String mPlayName, int offenseOrDefense, Context mContext) throws IOException, XmlPullParserException {
 
@@ -103,6 +104,13 @@ public class PlayXMLParser {
                         parser.next();
                         // blurb tag
                         parser.next();
+
+                    mCourt = readText(parser);
+
+                    // null tag
+                    parser.next();
+                    // blurb tag
+                    parser.next();
 
                     mBlurb = readText(parser);
 
@@ -201,13 +209,16 @@ public class PlayXMLParser {
         if (parser.getEventType() != XmlPullParser.START_TAG) {
             //throw new IllegalStateException();
         }
+        Log.v(TAG, "in skip. current parser: " + parser.getName());
         int depth = 1;
         while (depth != 0) {
             switch (parser.next()) {
                 case XmlPullParser.END_TAG:
+                    Log.v(TAG, "in skip end_tag. current parser: " + parser.getName());
                     depth--;
                     break;
                 case XmlPullParser.START_TAG:
+                    Log.v(TAG, "in skip start_tag. current parser: " + parser.getName());
                     depth++;
                     break;
             }

@@ -39,7 +39,7 @@ public class OffenseActivity extends Activity {
     private RelativeLayout mFrame;
     private ImageView mCourt;
     private TextView mBlurb, mLink;
-    private int mDisplayWidth, mDisplayHeight;
+    private int mDisplayWidth, mDisplayHeight, shotClockX, shotClockY;
     private float addToX, addToY;
     float factor;
 
@@ -84,7 +84,16 @@ public class OffenseActivity extends Activity {
             playActions = mParser.getPlay(offenseName, 0, getApplicationContext());
             //String text = Html.fromHtml("<center>" + mParser.mUrl + "</center>" +  "<br/>");
             mLink.setText(mParser.mUrl);
-            mBlurb.setText(Html.fromHtml(mParser.mBlurb));
+            mBlurb.setText(Html.fromHtml(mParser.mPlayName + "<br/><br/>" + mParser.mBlurb));
+            if (mParser.mCourt.equals("right")) {
+                shotClockX = 20;
+                shotClockY = 40;
+                mCourt.setImageResource(R.drawable.basket_right);
+            }
+            else {
+                shotClockX = 450;
+                shotClockY = 40;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (XmlPullParserException e) {
@@ -249,7 +258,7 @@ public class OffenseActivity extends Activity {
         private final Paint mPainter = new Paint();
         private ScheduledFuture<?> mMoverFuture;
         private int xEdge = 0, yEdge = 0;
-        private static final int REFRESH_RATE = 400;
+        private static final int REFRESH_RATE = 500;
         private int bitmapResId;
         private int playerSize;
 
@@ -305,7 +314,7 @@ public class OffenseActivity extends Activity {
                 //this.rawX = 470;
                 //this.rawY = 0;
                 Log.v(TAG, "x calc equals: " + xCalc(450) + " and yCalc equals: " + yCalc(40));
-                canvas.drawText(playList.get(frameNum-1).split(",")[2], xCalc(450), yCalc(40), mPainter);
+                canvas.drawText(playList.get(frameNum-1).split(",")[2], xCalc(shotClockX), yCalc(shotClockY), mPainter);
             }
 
             canvas.restore();
@@ -361,7 +370,7 @@ public class OffenseActivity extends Activity {
                     PlayerView.this.postInvalidate();
 
                 }
-            }, 2500, REFRESH_RATE, TimeUnit.MILLISECONDS);
+            }, 1500, REFRESH_RATE, TimeUnit.MILLISECONDS);
 
         }
 

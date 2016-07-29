@@ -19,7 +19,11 @@ import android.widget.ListView;
 
 public class MainActivity extends FragmentActivity {
     static final int NUM_ITEMS = 10;
-    private static String[] sOffenses = {"2016 NBA Finals, Game 7, 4th Quarter, 1:09", "Princeton"};
+    private static String[] sOffenses = {
+            "2016 NBA Finals, Game 7, 4th Quarter, 1:09",
+            "2013 NBA Finals, Game 7, 4th Quarter, :39",
+            "2011 NBA Finals, Game 2, 4th Quarter, :34"
+    };
     private static String[] sDefenses = {"1-3-1", "2-3"};
 
     MyAdapter mAdapter;
