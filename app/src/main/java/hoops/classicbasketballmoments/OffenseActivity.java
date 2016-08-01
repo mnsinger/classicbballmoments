@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -40,8 +41,8 @@ public class OffenseActivity extends Activity {
     private RelativeLayout mFrame;
     private ImageView mCourt;
     private TextView mBlurb, mLink;
-    private ImageButton mPlayPause;
-    private int mDisplayWidth, mDisplayHeight, shotClockX, shotClockY;
+    private ImageButton mPlayPause, mStep, mBackstep, mFaster, mSlower;
+    private int mDisplayWidth, mDisplayHeight, shotClockX, shotClockY, REFRESH_RATE = 500;
     private float addToX, addToY;
     float factor;
     boolean isPlaying = false;
@@ -64,6 +65,10 @@ public class OffenseActivity extends Activity {
         mLink = (TextView) findViewById(R.id.link);
         mBlurb = (TextView) findViewById(R.id.blurb);
         mPlayPause = (ImageButton) findViewById(R.id.play_pause);
+        mStep = (ImageButton) findViewById(R.id.step);
+        mBackstep = (ImageButton) findViewById(R.id.backstep);
+        mFaster = (ImageButton) findViewById(R.id.faster);
+        mSlower = (ImageButton) findViewById(R.id.slower);
 
         //mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dot);
 
@@ -194,6 +199,78 @@ public class OffenseActivity extends Activity {
             }
         });
 
+        mStep.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                stepForward();
+            }
+        });
+
+        mBackstep.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                stepBack();
+            }
+        });
+
+        mSlower.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (REFRESH_RATE < 2000) {
+                    REFRESH_RATE += 500;
+                    Toast.makeText(getApplicationContext(), "Slowed down, frames switch at " + REFRESH_RATE + " ms. Normal speed is 500ms", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "C'mon man, I'm not gonna let you go slower than this.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        mFaster.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (REFRESH_RATE > 500) {
+                    REFRESH_RATE -= 500;
+                    Toast.makeText(getApplicationContext(), "Sped up, frames switch at " + REFRESH_RATE + " ms. Normal speed is 500ms", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Can't go any faster bro!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+    public void stepBack() {
+
+        o1.stepBack();
+        o2.stepBack();
+        o3.stepBack();
+        o4.stepBack();
+        o5.stepBack();
+
+        d1.stepBack();
+        d2.stepBack();
+        d3.stepBack();
+        d4.stepBack();
+        d5.stepBack();
+
+        ballV.stepBack();
+
+    }
+
+    public void stepForward() {
+
+        o1.stepForward();
+        o2.stepForward();
+        o3.stepForward();
+        o4.stepForward();
+        o5.stepForward();
+
+        d1.stepForward();
+        d2.stepForward();
+        d3.stepForward();
+        d4.stepForward();
+        d5.stepForward();
+
+        ballV.stepForward();
+
     }
 
     public void pause() {
@@ -300,7 +377,7 @@ public class OffenseActivity extends Activity {
         private final Paint mPainter = new Paint();
         private ScheduledFuture<?> mMoverFuture;
         private int xEdge = 0, yEdge = 0;
-        private static final int REFRESH_RATE = 500;
+        //private int REFRESH_RATE = 500;
         private int bitmapResId;
         private int playerSize;
 
@@ -339,7 +416,10 @@ public class OffenseActivity extends Activity {
             // player
             if (this.bitmapResId != R.drawable.ball) {
                 if (frameNum < playList.size()) {
-                    //canvas.drawLine(x - playerSize/4, y - playerSize/4, x + playerSize/4, y + playerSize/4, mPainter);
+                    //mPainter.setStyle(Paint.Style.STROKE);
+                    mPainter.setStrokeWidth(10);
+                    canvas.drawLine(x, y, x + playerSize, y, mPainter);
+                    mPainter.setStrokeWidth(1);
                     // Write the name so it shows in the screen
                     if (isOutOfScreen())
                         canvas.drawText(playList.get(frameNum).split(",")[2], x, y + playerSize, mPainter);
@@ -347,7 +427,9 @@ public class OffenseActivity extends Activity {
                         canvas.drawText(playList.get(frameNum).split(",")[2], x, y, mPainter);
                 }
                 else if (frameNum == playList.size()) {
-                    //canvas.drawLine(x - playerSize/4, y - playerSize/4, x + playerSize/4, y - playerSize/4, mPainter);
+                    mPainter.setStrokeWidth(10);
+                    canvas.drawLine(x, y, x, y - playerSize, mPainter);
+                    mPainter.setStrokeWidth(1);
                     if (isOutOfScreen())
                         canvas.drawText(playList.get(0).split(",")[2], x, y + playerSize, mPainter);
                     else
@@ -437,9 +519,33 @@ public class OffenseActivity extends Activity {
             });*/
         }
 
+        private void stepForward() {
+            Log.v(TAG, "IN stepForward!");
+            if (frameNum == playList.size())
+                return;
+
+            stop();
+            //frameNum++;
+            moveWhileOnScreen();
+            PlayerView.this.postInvalidate();
+
+        }
+
+        private void stepBack() {
+            Log.v(TAG, "IN stepBack!");
+            if (frameNum <= 1)
+                return;
+
+            stop();
+            frameNum=frameNum-2;
+            moveWhileOnScreen();
+            PlayerView.this.postInvalidate();
+
+        }
+
         private synchronized void moveWhileOnScreen() {
 
-            Log.v(TAG, "In moveWhileOnScreen() old x and y:" + x + " and " + y);
+            Log.v(TAG, "In moveWhileOnScreen() frameNum: " + frameNum + " old x and y:" + x + " and " + y);
             //x += 25;
             //y += 25;
 

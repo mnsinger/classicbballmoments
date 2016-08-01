@@ -21,10 +21,11 @@
         android:gravity="center"
         android:id="@+id/controls"
         android:orientation="horizontal">
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="slower"
+            android:src="@drawable/slower"
+            android:backgroundTint="@color/white"
             android:id="@+id/slower"
             />
         <ImageButton
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/backstep"
             android:backgroundTint="@color/white"
+            android:id="@+id/backstep"
             />
         <ImageButton
             android:layout_width="wrap_content"
@@ -45,11 +47,13 @@
             android:layout_height="wrap_content"
             android:src="@drawable/step"
             android:backgroundTint="@color/white"
+            android:id="@+id/step"
             />
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="faster"
+            android:src="@drawable/faster"
+            android:backgroundTint="@color/white"
             android:id="@+id/faster"
             />
     </LinearLayout>
