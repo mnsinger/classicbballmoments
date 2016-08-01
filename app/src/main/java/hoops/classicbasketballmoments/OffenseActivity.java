@@ -128,30 +128,41 @@ public class OffenseActivity extends Activity {
             Log.v(TAG, "ACTION IS: " + action);
 
             if (action.split(",")[0].equals("opg"))
-                playActionsO1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsO1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO1.add(action);
             else if (action.split(",")[0].equals("osg"))
-                playActionsO2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsO2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO2.add(action);
             else if (action.split(",")[0].equals("osf"))
-                playActionsO3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsO3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO3.add(action);
             else if (action.split(",")[0].equals("opf"))
-                playActionsO4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsO4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO4.add(action);
             else if (action.split(",")[0].equals("oc"))
-                playActionsO5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsO5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsO5.add(action);
 
             else if (action.split(",")[0].equals("dpg"))
-                playActionsD1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsD1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsD1.add(action);
             else if (action.split(",")[0].equals("dsg"))
-                playActionsD2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsD2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsD2.add(action);
             else if (action.split(",")[0].equals("dsf"))
-                playActionsD3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsD3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsD3.add(action);
             else if (action.split(",")[0].equals("dpf"))
-                playActionsD4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsD4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsD4.add(action);
             else if (action.split(",")[0].equals("dc"))
-                playActionsD5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsD5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsD5.add(action);
 
             else if (action.split(",")[0].equals("ball"))
-                playActionsBall.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 //playActionsBall.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                //playActionsBall.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
+                playActionsBall.add(action);
         }
 
         adjustPositioningForScreen();
@@ -391,8 +402,8 @@ public class OffenseActivity extends Activity {
             this.playList = playList;
             Log.v(TAG, "playList: " + playList.get(0));
 
-            this.rawX = Float.valueOf(playList.get(0).split(",")[0]);
-            this.rawY = Float.valueOf(playList.get(0).split(",")[1]);
+            this.rawX = Float.valueOf(playList.get(0).split(",")[1]);
+            this.rawY = Float.valueOf(playList.get(0).split(",")[2]);
 
             this.x = xCalc();
             this.y = yCalc();
@@ -409,7 +420,7 @@ public class OffenseActivity extends Activity {
 
             canvas.drawBitmap(mScaledBitmap, x, y, mPainter);
 
-            Log.v(TAG, "Should be a name: " + playList.get(0).split(",")[2]);
+            Log.v(TAG, "Should be a name: " + playList.get(0).split(",")[3]);
 
             mPainter.setTextSize(48f);
 
@@ -417,23 +428,23 @@ public class OffenseActivity extends Activity {
             if (this.bitmapResId != R.drawable.ball) {
                 if (frameNum < playList.size()) {
                     //mPainter.setStyle(Paint.Style.STROKE);
-                    mPainter.setStrokeWidth(10);
-                    canvas.drawLine(x, y, x + playerSize, y, mPainter);
-                    mPainter.setStrokeWidth(1);
+                    //mPainter.setStrokeWidth(10);
+                    //canvas.drawLine(x, y, x + playerSize, y, mPainter);
+                    //mPainter.setStrokeWidth(1);
                     // Write the name so it shows in the screen
                     if (isOutOfScreen())
-                        canvas.drawText(playList.get(frameNum).split(",")[2], x, y + playerSize, mPainter);
+                        canvas.drawText(playList.get(frameNum).split(",")[3], x, y + playerSize, mPainter);
                     else
-                        canvas.drawText(playList.get(frameNum).split(",")[2], x, y, mPainter);
+                        canvas.drawText(playList.get(frameNum).split(",")[3], x, y, mPainter);
                 }
                 else if (frameNum == playList.size()) {
-                    mPainter.setStrokeWidth(10);
-                    canvas.drawLine(x, y, x, y - playerSize, mPainter);
-                    mPainter.setStrokeWidth(1);
+                    //mPainter.setStrokeWidth(10);
+                    //canvas.drawLine(x, y, x, y - playerSize, mPainter);
+                    //mPainter.setStrokeWidth(1);
                     if (isOutOfScreen())
-                        canvas.drawText(playList.get(0).split(",")[2], x, y + playerSize, mPainter);
+                        canvas.drawText(playList.get(0).split(",")[3], x, y + playerSize, mPainter);
                     else
-                        canvas.drawText(playList.get(0).split(",")[2], x, y, mPainter);
+                        canvas.drawText(playList.get(0).split(",")[3], x, y, mPainter);
                 }
             }
             // ball
@@ -441,7 +452,7 @@ public class OffenseActivity extends Activity {
                 //this.rawX = 470;
                 //this.rawY = 0;
                 Log.v(TAG, "x calc equals: " + xCalc(450) + " and yCalc equals: " + yCalc(40));
-                canvas.drawText(playList.get(frameNum-1).split(",")[2], xCalc(shotClockX), yCalc(shotClockY), mPainter);
+                canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
             }
 
             canvas.restore();
@@ -551,8 +562,8 @@ public class OffenseActivity extends Activity {
 
 
             if (frameNum < playList.size()) {
-                this.rawX = Float.valueOf(playList.get(frameNum).split(",")[0]);
-                this.rawY = Float.valueOf(playList.get(frameNum).split(",")[1]);
+                this.rawX = Float.valueOf(playList.get(frameNum).split(",")[1]);
+                this.rawY = Float.valueOf(playList.get(frameNum).split(",")[2]);
                 this.x = xCalc();
                 this.y = yCalc();
                 //x = (Float.valueOf(playList.get(frameNum).split(",")[0])*factor) + addToX;
