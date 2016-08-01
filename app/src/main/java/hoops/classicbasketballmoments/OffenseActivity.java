@@ -15,6 +15,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -39,9 +40,12 @@ public class OffenseActivity extends Activity {
     private RelativeLayout mFrame;
     private ImageView mCourt;
     private TextView mBlurb, mLink;
+    private ImageButton mPlayPause;
     private int mDisplayWidth, mDisplayHeight, shotClockX, shotClockY;
     private float addToX, addToY;
     float factor;
+    boolean isPlaying = false;
+    PlayerView o1, o2, o3, o4, o5, d1, d2, d3, d4, d5, ballV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,7 @@ public class OffenseActivity extends Activity {
         mCourt = (ImageView) findViewById(R.id.court);
         mLink = (TextView) findViewById(R.id.link);
         mBlurb = (TextView) findViewById(R.id.blurb);
+        mPlayPause = (ImageButton) findViewById(R.id.play_pause);
 
         //mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dot);
 
@@ -150,19 +155,19 @@ public class OffenseActivity extends Activity {
         int dPlayer = R.drawable.ddot;
         int ball = R.drawable.ball;
 
-        PlayerView o1 = new PlayerView(getApplicationContext(), playActionsO1, oPlayer);
-        PlayerView o2 = new PlayerView(getApplicationContext(), playActionsO2, oPlayer);
-        PlayerView o3 = new PlayerView(getApplicationContext(), playActionsO3, oPlayer);
-        PlayerView o4 = new PlayerView(getApplicationContext(), playActionsO4, oPlayer);
-        PlayerView o5 = new PlayerView(getApplicationContext(), playActionsO5, oPlayer);
+        o1 = new PlayerView(getApplicationContext(), playActionsO1, oPlayer);
+        o2 = new PlayerView(getApplicationContext(), playActionsO2, oPlayer);
+        o3 = new PlayerView(getApplicationContext(), playActionsO3, oPlayer);
+        o4 = new PlayerView(getApplicationContext(), playActionsO4, oPlayer);
+        o5 = new PlayerView(getApplicationContext(), playActionsO5, oPlayer);
 
-        PlayerView d1 = new PlayerView(getApplicationContext(), playActionsD1, dPlayer);
-        PlayerView d2 = new PlayerView(getApplicationContext(), playActionsD2, dPlayer);
-        PlayerView d3 = new PlayerView(getApplicationContext(), playActionsD3, dPlayer);
-        PlayerView d4 = new PlayerView(getApplicationContext(), playActionsD4, dPlayer);
-        PlayerView d5 = new PlayerView(getApplicationContext(), playActionsD5, dPlayer);
+        d1 = new PlayerView(getApplicationContext(), playActionsD1, dPlayer);
+        d2 = new PlayerView(getApplicationContext(), playActionsD2, dPlayer);
+        d3 = new PlayerView(getApplicationContext(), playActionsD3, dPlayer);
+        d4 = new PlayerView(getApplicationContext(), playActionsD4, dPlayer);
+        d5 = new PlayerView(getApplicationContext(), playActionsD5, dPlayer);
 
-        PlayerView ballV = new PlayerView(getApplicationContext(), playActionsBall, ball);
+        ballV = new PlayerView(getApplicationContext(), playActionsBall, ball);
 
         mFrame.addView(o1);
         mFrame.addView(o2);
@@ -177,6 +182,43 @@ public class OffenseActivity extends Activity {
         mFrame.addView(d5);
 
         mFrame.addView(ballV);
+
+        mPlayPause.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (isPlaying) {
+                    pause();
+                }else{
+                    play();
+                }
+                isPlaying = !isPlaying;
+            }
+        });
+
+    }
+
+    public void pause() {
+
+        mPlayPause.setImageResource(R.drawable.play);
+
+        o1.stop();
+        o2.stop();
+        o3.stop();
+        o4.stop();
+        o5.stop();
+
+        d1.stop();
+        d2.stop();
+        d3.stop();
+        d4.stop();
+        d5.stop();
+
+        ballV.stop();
+
+    }
+
+    public void play() {
+
+        mPlayPause.setImageResource(R.drawable.pause);
 
         o1.start();
         o2.start();
@@ -297,12 +339,15 @@ public class OffenseActivity extends Activity {
             // player
             if (this.bitmapResId != R.drawable.ball) {
                 if (frameNum < playList.size()) {
+                    //canvas.drawLine(x - playerSize/4, y - playerSize/4, x + playerSize/4, y + playerSize/4, mPainter);
+                    // Write the name so it shows in the screen
                     if (isOutOfScreen())
                         canvas.drawText(playList.get(frameNum).split(",")[2], x, y + playerSize, mPainter);
                     else
                         canvas.drawText(playList.get(frameNum).split(",")[2], x, y, mPainter);
                 }
                 else if (frameNum == playList.size()) {
+                    //canvas.drawLine(x - playerSize/4, y - playerSize/4, x + playerSize/4, y - playerSize/4, mPainter);
                     if (isOutOfScreen())
                         canvas.drawText(playList.get(0).split(",")[2], x, y + playerSize, mPainter);
                     else

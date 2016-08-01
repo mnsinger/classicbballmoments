@@ -14,12 +14,51 @@
         android:adjustViewBounds="true"
         android:padding="3sp"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/court"
+        android:gravity="center"
+        android:id="@+id/controls"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="slower"
+            android:id="@+id/slower"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backstep"
+            android:backgroundTint="@color/white"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play"
+            android:backgroundTint="@color/white"
+            android:id="@+id/play_pause"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/step"
+            android:backgroundTint="@color/white"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="faster"
+            android:id="@+id/faster"
+            />
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/link"
-        android:layout_below="@+id/court"
+        android:layout_below="@+id/controls"
         android:text="aaaaaaaaaaaaaaaaaaaaa"
         android:textSize="12sp"
         android:autoLink="web"
