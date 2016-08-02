@@ -200,6 +200,7 @@ public class PlayXMLParser {
         String result = "";
         if (parser.next() == XmlPullParser.TEXT) {
             result = parser.getText();
+            Log.v(TAG, "readText: " + result);
             parser.nextTag();
         }
         return result;

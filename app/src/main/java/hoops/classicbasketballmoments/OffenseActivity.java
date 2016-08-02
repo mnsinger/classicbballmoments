@@ -46,7 +46,7 @@ public class OffenseActivity extends Activity {
     private int mDisplayWidth, mDisplayHeight, shotClockX, shotClockY, REFRESH_RATE = 500;
     private float addToX, addToY;
     float factor;
-    boolean isPlaying = false;
+    int isPlaying = 0;
     PlayerView o1, o2, o3, o4, o5, d1, d2, d3, d4, d5, ballV;
 
     @Override
@@ -93,7 +93,6 @@ public class OffenseActivity extends Activity {
         ArrayList<String> playActions = new ArrayList<>();
         try {
             playActions = mParser.getPlay(offenseName, 0, getApplicationContext());
-            //String text = Html.fromHtml("<center>" + mParser.mUrl + "</center>" +  "<br/>");
             mLink.setText(mParser.mUrl);
             mBlurb.setText(Html.fromHtml(mParser.mPlayName + "<br/><br/>" + mParser.mBlurb));
             if (mParser.mCourt.equals("right")) {
@@ -102,8 +101,8 @@ public class OffenseActivity extends Activity {
                 mCourt.setImageResource(R.drawable.basket_right);
             }
             else {
-                shotClockX = 450;
-                shotClockY = 40;
+                shotClockX = 440;
+                shotClockY = 25;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -129,62 +128,50 @@ public class OffenseActivity extends Activity {
             Log.v(TAG, "ACTION IS: " + action);
 
             if (action.split(",")[0].equals("opg"))
-                //playActionsO1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsO1.add(action);
             else if (action.split(",")[0].equals("osg"))
-                //playActionsO2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsO2.add(action);
             else if (action.split(",")[0].equals("osf"))
-                //playActionsO3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsO3.add(action);
             else if (action.split(",")[0].equals("opf"))
-                //playActionsO4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsO4.add(action);
             else if (action.split(",")[0].equals("oc"))
-                //playActionsO5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsO5.add(action);
 
             else if (action.split(",")[0].equals("dpg"))
-                //playActionsD1.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsD1.add(action);
             else if (action.split(",")[0].equals("dsg"))
-                //playActionsD2.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsD2.add(action);
             else if (action.split(",")[0].equals("dsf"))
-                //playActionsD3.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsD3.add(action);
             else if (action.split(",")[0].equals("dpf"))
-                //playActionsD4.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsD4.add(action);
             else if (action.split(",")[0].equals("dc"))
-                //playActionsD5.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsD5.add(action);
 
             else if (action.split(",")[0].equals("ball"))
-                //playActionsBall.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
-                //playActionsBall.add(action.split(",")[1] + "," + action.split(",")[2] + "," + action.split(",")[3]);
                 playActionsBall.add(action);
         }
 
         adjustPositioningForScreen();
 
-        int oPlayer = R.drawable.odot;
-        int dPlayer = R.drawable.ddot;
-        int ball = R.drawable.ball;
+        //int oPlayer = R.drawable.odot;
+        //int dPlayer = R.drawable.ddot;
+        //int ball = R.drawable.ball;
 
-        o1 = new PlayerView(getApplicationContext(), playActionsO1, oPlayer);
-        o2 = new PlayerView(getApplicationContext(), playActionsO2, oPlayer);
-        o3 = new PlayerView(getApplicationContext(), playActionsO3, oPlayer);
-        o4 = new PlayerView(getApplicationContext(), playActionsO4, oPlayer);
-        o5 = new PlayerView(getApplicationContext(), playActionsO5, oPlayer);
+        o1 = new PlayerView(getApplicationContext(), playActionsO1);
+        o2 = new PlayerView(getApplicationContext(), playActionsO2);
+        o3 = new PlayerView(getApplicationContext(), playActionsO3);
+        o4 = new PlayerView(getApplicationContext(), playActionsO4);
+        o5 = new PlayerView(getApplicationContext(), playActionsO5);
 
-        d1 = new PlayerView(getApplicationContext(), playActionsD1, dPlayer);
-        d2 = new PlayerView(getApplicationContext(), playActionsD2, dPlayer);
-        d3 = new PlayerView(getApplicationContext(), playActionsD3, dPlayer);
-        d4 = new PlayerView(getApplicationContext(), playActionsD4, dPlayer);
-        d5 = new PlayerView(getApplicationContext(), playActionsD5, dPlayer);
+        d1 = new PlayerView(getApplicationContext(), playActionsD1);
+        d2 = new PlayerView(getApplicationContext(), playActionsD2);
+        d3 = new PlayerView(getApplicationContext(), playActionsD3);
+        d4 = new PlayerView(getApplicationContext(), playActionsD4);
+        d5 = new PlayerView(getApplicationContext(), playActionsD5);
 
-        ballV = new PlayerView(getApplicationContext(), playActionsBall, ball);
+        ballV = new PlayerView(getApplicationContext(), playActionsBall);
 
         mFrame.addView(o1);
         mFrame.addView(o2);
@@ -202,12 +189,18 @@ public class OffenseActivity extends Activity {
 
         mPlayPause.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if (isPlaying) {
+                if (isPlaying == 1) {
+                    isPlaying = 0;
                     pause();
-                }else{
+                } else if (isPlaying == 0) {
+                    isPlaying = 1;
                     play();
                 }
-                isPlaying = !isPlaying;
+                else if (isPlaying == 2) {
+                    isPlaying = 1;
+                    reset();
+                }
+                //isPlaying = !isPlaying;
             }
         });
 
@@ -305,6 +298,25 @@ public class OffenseActivity extends Activity {
 
     }
 
+    public void reset() {
+        mPlayPause.setImageResource(R.drawable.pause);
+
+        o1.reset();
+        o2.reset();
+        o3.reset();
+        o4.reset();
+        o5.reset();
+
+        d1.reset();
+        d2.reset();
+        d3.reset();
+        d4.reset();
+        d5.reset();
+
+        ballV.reset();
+
+    }
+
     public void play() {
 
         mPlayPause.setImageResource(R.drawable.pause);
@@ -338,35 +350,23 @@ public class OffenseActivity extends Activity {
         // Court height == (DisplayWidth / 470) * 500
         if (mDisplayHeight > mDisplayWidth) {
             factor = (float)mDisplayWidth/(float)mCourtWidth;
-            //addToY = (((float)mDisplayHeight - factor*(float)mCourtHeight)/2);
-            Log.v(TAG, "0, 0 for image is: 0, " + addToY);
         }
         // Landscape view
         // Court height == DisplayHeight
         // Court width  == (DisplayHeight / 500) * 470
         else {
             factor = (float)mDisplayHeight/(float)mCourtHeight;
-            //addToX = (((float)mDisplayWidth - factor*(float)mCourtWidth)/2);
-            Log.v(TAG, "0, 0 for image is: " + addToX + ", 0");
         }
         Log.v(TAG, "FACTOR is: " + factor);
 
         int orientation = getResources().getConfiguration().orientation;
         Log.v(TAG, "Orientation is... " + orientation);
 
+        // landscape
         if (orientation == 2) {
-            //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(Math.round(mCourtWidth*factor), Math.round(mCourtHeight*factor));
-            //mCourt.setLayoutParams(layoutParams);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(Math.round(mCourtWidth*factor), Math.round(mCourtHeight*factor));
             mCourt.setLayoutParams(layoutParams);
         }
-        //
-        //touched_image_view.setLayoutParams(layoutParams);
-
-
-
-        //addToX = 3;
-        //addToY = 3;
 
         addToX = 0;
         addToY = 0;
@@ -385,27 +385,18 @@ public class OffenseActivity extends Activity {
 
         private float rawX = 0, rawY = 0;
         private float x = 0, y = 0;
-        private int frameNum = 1;
+        private int frameNum = 0;
         private ArrayList<String> playList;
-        private Bitmap mBitmap;
-        private Bitmap mScaledBitmap;
         private final Paint mPainter = new Paint();
         private ScheduledFuture<?> mMoverFuture;
-        private int xEdge = 0, yEdge = 0;
-        //private int REFRESH_RATE = 500;
-        private int bitmapResId;
         private int playerSize;
-        private String playerType;
+        private String playerType, playerName;
 
-        PlayerView(Context context, ArrayList<String> playList, int bitmapResId) {
+        PlayerView(Context context, ArrayList<String> playList) {
             super(context);
 
-            mBitmap = BitmapFactory.decodeResource(getResources(), bitmapResId);
-            this.bitmapResId = bitmapResId;
-            playerSize = Math.round(mBitmap.getHeight() * factor);
-            mScaledBitmap = Bitmap.createScaledBitmap(mBitmap, playerSize, playerSize, false);
+            playerSize = Math.round(32 * factor);
             this.playList = playList;
-            Log.v(TAG, "playList: " + playList.get(0));
 
             if (playList.get(0).split(",")[0].substring(0,1).equals("o")) {
                 playerType = "offense";
@@ -415,8 +406,10 @@ public class OffenseActivity extends Activity {
             }
             else if (playList.get(0).split(",")[0].substring(0,1).equals("b")) {
                 playerType = "ball";
+                playerSize = Math.round(16*factor);
             }
 
+            this.playerName = playList.get(0).split(",")[3];
             this.rawX = Float.valueOf(playList.get(0).split(",")[1]);
             this.rawY = Float.valueOf(playList.get(0).split(",")[2]);
 
@@ -428,80 +421,119 @@ public class OffenseActivity extends Activity {
             mPainter.setAntiAlias(true);
         }
 
+        public void drawPlayerOrBall(Canvas canvas) {
+
+            // special player action change shape, color
+            if (frameNum < playList.size() && playList.get(frameNum).split(",").length > 4) {
+                mPainter.setStyle(Paint.Style.STROKE);
+                mPainter.setStrokeWidth(10);
+                canvas.drawRect(x-playerSize / 2, y-playerSize/2, x+playerSize / 2, y+playerSize/2, mPainter);
+                mPainter.setColor(Color.YELLOW);
+                mPainter.setStrokeWidth(1);
+
+                mPainter.setStyle(Paint.Style.FILL);
+                canvas.drawRect(x-playerSize / 2 + 5, y-playerSize/2 + 5, x+playerSize / 2 - 5, y+playerSize/2 - 5, mPainter);
+                mPainter.setColor(Color.BLACK);
+
+
+            }
+            else {
+
+                mPainter.setStyle(Paint.Style.STROKE);
+                mPainter.setStrokeWidth(10);
+                canvas.drawCircle(x, y, playerSize / 2, mPainter);
+                mPainter.setStrokeWidth(1);
+
+                if (playerType.equals("offense")) {
+                    mPainter.setColor(Color.YELLOW);
+                } else if (playerType.equals("defense")) {
+                    mPainter.setColor(Color.WHITE);
+                } else
+                    mPainter.setColor(Color.parseColor("#ffa500"));
+
+                mPainter.setStyle(Paint.Style.FILL);
+                canvas.drawCircle(x, y, playerSize / 2 - 5, mPainter);
+                mPainter.setColor(Color.BLACK);
+
+            }
+
+        }
+
         @Override
         protected synchronized void onDraw(Canvas canvas) {
 
             canvas.save();
 
-            //canvas.drawBitmap(mScaledBitmap, x, y, mPainter);
-            mPainter.setStyle(Paint.Style.STROKE);
-            mPainter.setStrokeWidth(10);
-            canvas.drawCircle(x, y, playerSize/2, mPainter);
-            mPainter.setStrokeWidth(1);
-            if (playerType.equals("offense"))
-                mPainter.setColor(Color.RED);
-            else if (playerType.equals("defense"))
-                mPainter.setColor(Color.YELLOW);
-            else
-                mPainter.setColor(Color.parseColor("#ffa500"));
-            mPainter.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(x, y, playerSize/2-5, mPainter);
-            mPainter.setColor(Color.BLACK);
+            drawPlayerOrBall(canvas);
+
+            if (frameNum == playList.size()) {
+                mPlayPause.setImageResource(R.drawable.replay);
+                isPlaying = 2;
+                canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
+            }
 
             Log.v(TAG, "Should be a name: " + playList.get(0).split(",")[3]);
 
             mPainter.setTextSize(48f);
 
-            // player
-            if (this.bitmapResId != R.drawable.ball) {
+            // player aka not ball
+            if (!playerType.equals("ball")) {
+                float textX, textY = y - playerSize;
                 if (frameNum < playList.size()) {
-                    //mPainter.setStyle(Paint.Style.STROKE);
-                    //mPainter.setStrokeWidth(10);
-                    //canvas.drawLine(x, y, x + playerSize, y, mPainter);
-                    //mPainter.setStrokeWidth(1);
                     // Write the name so it shows in the screen
-                    if (isOutOfScreen())
-                        canvas.drawText(playList.get(frameNum).split(",")[3], x, y + playerSize, mPainter);
-                    else
-                        canvas.drawText(playList.get(frameNum).split(",")[3], x, y, mPainter);
+                    if (isOutOfScreen()) {
+                        textY = y + playerSize;
+                    }
                 }
-                else if (frameNum == playList.size()) {
-                    //mPainter.setStrokeWidth(10);
-                    //canvas.drawLine(x, y, x, y - playerSize, mPainter);
-                    //mPainter.setStrokeWidth(1);
-                    if (isOutOfScreen())
-                        canvas.drawText(playList.get(0).split(",")[3], x, y + playerSize, mPainter);
-                    else
-                        canvas.drawText(playList.get(0).split(",")[3], x, y, mPainter);
+                if (playerType.equals("offense")) {
+                    textY = y + playerSize;
                 }
+                canvas.drawText(/*playerName + " " +*/ (int)rawX + ", " + (int)rawY, x, textY, mPainter);
             }
             // ball
-            else if (frameNum <= playList.size()) {
-                //this.rawX = 470;
-                //this.rawY = 0;
-                Log.v(TAG, "x calc equals: " + xCalc(450) + " and yCalc equals: " + yCalc(40));
-                canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
+            else if (frameNum < playList.size()) {
+                canvas.drawText(playList.get(frameNum).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
             }
+
+            frameNum++;
 
             canvas.restore();
 
         }
 
-        private float xCalc() {
+        /*private float xCalc() {
             return rawX*factor + addToX - (factor*mBitmap.getHeight()/2);
-        }
+        }*/
 
-        private float xCalc(int x) {
-            return x*factor + addToX - (factor*mBitmap.getHeight()/2);
+        private float xCalc() {
+            return rawX*factor;
         }
 
         private float yCalc() {
-            return rawY*factor + addToY - (factor*mBitmap.getHeight()/2);
+            return rawY*factor;
+        }
+
+        private float xCalc(int x) {
+            return x*factor;
         }
 
         private float yCalc(int y) {
-            return y*factor + addToY - (factor*mBitmap.getHeight()/2);
+            return y*factor;
         }
+
+       /*private float xCalc(int x) {
+            return x*factor + addToX - (factor*mBitmap.getHeight()/2);
+        }*/
+
+        /*private float yCalc() {
+            return rawY*factor + addToY - (factor*mBitmap.getHeight()/2);
+        }*/
+
+
+
+        /*private float yCalc(int y) {
+            return y*factor + addToY - (factor*mBitmap.getHeight()/2);
+        }*/
 
         private boolean isOutOfScreen() {
             if (rawY < 30) {
@@ -509,6 +541,11 @@ public class OffenseActivity extends Activity {
             }
 
             return false;
+        }
+
+        private void reset() {
+            frameNum = 1;
+            start();
         }
 
         private void start() {
@@ -546,25 +583,14 @@ public class OffenseActivity extends Activity {
                 mMoverFuture.cancel(true);
             }
 
-            // This work will be performed on the UI Thread
-            /*mFrame.post(new Runnable() {
-                @Override
-                public void run() {
-
-                    // TODO - Remove the BubbleView from mFrame
-                    mFrame.removeView(PlayerView.this);
-
-                }
-            });*/
         }
 
         private void stepForward() {
-            Log.v(TAG, "IN stepForward!");
+            Log.v(TAG, "IN stepForward! frameNum: " + frameNum);
             if (frameNum == playList.size())
                 return;
 
             stop();
-            //frameNum++;
             moveWhileOnScreen();
             PlayerView.this.postInvalidate();
 
@@ -585,26 +611,16 @@ public class OffenseActivity extends Activity {
         private synchronized void moveWhileOnScreen() {
 
             Log.v(TAG, "In moveWhileOnScreen() frameNum: " + frameNum + " old x and y:" + x + " and " + y);
-            //x += 25;
-            //y += 25;
-
 
             if (frameNum < playList.size()) {
                 this.rawX = Float.valueOf(playList.get(frameNum).split(",")[1]);
                 this.rawY = Float.valueOf(playList.get(frameNum).split(",")[2]);
                 this.x = xCalc();
                 this.y = yCalc();
-                //x = (Float.valueOf(playList.get(frameNum).split(",")[0])*factor) + addToX;
-                //y = (Float.valueOf(playList.get(frameNum).split(",")[1])*factor) + addToY;
-                //this.x -= (factor*mBitmap.getHeight())/2;
-                //this.y -= (factor*mBitmap.getHeight())/2;
-                frameNum++;
+                //frameNum++;
 
             }
             Log.v(TAG, "In moveWhileOnScreen() new x and y:" + x + " and " + y);
-
-            //postInvalidate();
-            //return true;
         }
 
 

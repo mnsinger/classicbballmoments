@@ -28,7 +28,7 @@
             <opf>60,15,richard jefferson</opf>
             <oc>10,300,kevin love</oc>
 
-            <dpg>285,400,klay thompson</dpg>
+            <dpg>255,400,klay thompson</dpg>
             <dsg>170,250,steph curry</dsg>
             <dsf>275,450,andre iguodala</dsf>
             <dpf>50,70,harrison barnes</dpf>
@@ -233,13 +233,13 @@
         <action>
             <ball>340,190,12</ball>
             <opg>340,190,kyrie irving</opg>
-            <osg>310,235,j.r. smith</osg>
+            <osg>295,170,j.r. smith</osg>
             <osf>25,75,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
 
             <dpg>305,205,klay thompson</dpg>
-            <dsg>230,210,steph curry</dsg>
+            <dsg>260,160,steph curry</dsg>
             <dsf>60,160,andre iguodala</dsf>
             <dpf>115,60,harrison barnes</dpf>
             <dc>150,430,draymond green</dc>
@@ -247,13 +247,13 @@
         <action>
             <ball>340,190,12</ball>
             <opg>340,190,kyrie irving</opg>
-            <osg>310,195,j.r. smith,screen|310|y+playerLength|x+playerLength|y+playerLength</osg>
+            <osg>295,170,j.r. smith,screen</osg>
             <osf>25,75,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
 
             <dpg>305,205,klay thompson</dpg>
-            <dsg>230,210,steph curry</dsg>
+            <dsg>260,160,steph curry</dsg>
             <dsf>60,160,andre iguodala</dsf>
             <dpf>115,60,harrison barnes</dpf>
             <dc>150,430,draymond green</dc>
@@ -261,13 +261,13 @@
         <action>
             <ball>335,140,11</ball>
             <opg>335,140,kyrie irving</opg>
-            <osg>310,195,j.r. smith,screen|310|y+playerLength|x+playerLength|y+playerLength</osg>
+            <osg>295,170,j.r. smith,screen</osg>
             <osf>25,15,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
 
             <dpg>295,235,klay thompson</dpg>
-            <dsg>295,130,steph curry</dsg>
+            <dsg>260,160,steph curry</dsg>
             <dsf>60,160,andre iguodala</dsf>
             <dpf>115,60,harrison barnes</dpf>
             <dc>150,430,draymond green</dc>
@@ -275,13 +275,13 @@
         <action>
             <ball>335,140,11</ball>
             <opg>335,140,kyrie irving</opg>
-            <osg>310,195,j.r. smith,screen|310|y+playerLength|x+playerLength|y+playerLength</osg>
+            <osg>295,170,j.r. smith,screen</osg>
             <osf>25,15,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
 
             <dpg>295,235,klay thompson</dpg>
-            <dsg>295,130,steph curry</dsg>
+            <dsg>260,160,steph curry</dsg>
             <dsf>60,160,andre iguodala</dsf>
             <dpf>115,60,harrison barnes</dpf>
             <dc>150,430,draymond green</dc>
@@ -289,7 +289,7 @@
         <action>
             <ball>375,70,10</ball>
             <opg>375,70,kyrie irving</opg>
-            <osg>310,195,j.r. smith,screen|310|y+playerLength|x+playerLength|y+playerLength</osg>
+            <osg>310,195,j.r. smith,screen</osg>
             <osf>25,15,lebron james</osf>
             <opf>120,5,richard jefferson</opf>
             <oc>160,450,kevin love</oc>
@@ -483,7 +483,7 @@
             <dc>85,320,draymond green</dc>
         </action>
         <action>
-            <ball>36,250,3</ball>
+            <ball>39,250,3</ball>
             <opg>245,60,kyrie irving</opg>
             <osg>315,345,j.r. smith</osg>
             <osf>25,15,lebron james</osf>
@@ -497,7 +497,7 @@
             <dc>90,270,draymond green</dc>
         </action>
         <action>
-            <ball>36,250,3</ball>
+            <ball>39,250,3</ball>
             <opg>245,60,kyrie irving</opg>
             <osg>315,345,j.r. smith</osg>
             <osf>25,15,lebron james</osf>
@@ -747,7 +747,7 @@
         </action>
         <action>
             <ball>145,205,7</ball>
-            <opg>275,225,mario chalmers</opg>
+            <opg>275,225,mario chalmers,screen</opg>
             <osg>440,480,dwyane wade</osg>
             <osf>145,205,lebron james</osf>
             <opf>345,485,shane battier</opf>
@@ -761,7 +761,7 @@
         </action>
         <action>
             <ball>145,205,7</ball>
-            <opg>275,225,mario chalmers</opg>
+            <opg>275,225,mario chalmers,screen</opg>
             <osg>440,480,dwyane wade</osg>
             <osf>145,205,lebron james</osf>
             <opf>345,485,shane battier</opf>
