@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -337,7 +338,7 @@ public class OffenseActivity extends Activity {
         // Court height == (DisplayWidth / 470) * 500
         if (mDisplayHeight > mDisplayWidth) {
             factor = (float)mDisplayWidth/(float)mCourtWidth;
-            addToY = (((float)mDisplayHeight - factor*(float)mCourtHeight)/2);
+            //addToY = (((float)mDisplayHeight - factor*(float)mCourtHeight)/2);
             Log.v(TAG, "0, 0 for image is: 0, " + addToY);
         }
         // Landscape view
@@ -345,7 +346,7 @@ public class OffenseActivity extends Activity {
         // Court width  == (DisplayHeight / 500) * 470
         else {
             factor = (float)mDisplayHeight/(float)mCourtHeight;
-            addToX = (((float)mDisplayWidth - factor*(float)mCourtWidth)/2);
+            //addToX = (((float)mDisplayWidth - factor*(float)mCourtWidth)/2);
             Log.v(TAG, "0, 0 for image is: " + addToX + ", 0");
         }
         Log.v(TAG, "FACTOR is: " + factor);
@@ -364,8 +365,11 @@ public class OffenseActivity extends Activity {
 
 
 
-        addToX = 3;
-        addToY = 3;
+        //addToX = 3;
+        //addToY = 3;
+
+        addToX = 0;
+        addToY = 0;
 
     }
 
@@ -391,6 +395,7 @@ public class OffenseActivity extends Activity {
         //private int REFRESH_RATE = 500;
         private int bitmapResId;
         private int playerSize;
+        private String playerType;
 
         PlayerView(Context context, ArrayList<String> playList, int bitmapResId) {
             super(context);
@@ -401,6 +406,16 @@ public class OffenseActivity extends Activity {
             mScaledBitmap = Bitmap.createScaledBitmap(mBitmap, playerSize, playerSize, false);
             this.playList = playList;
             Log.v(TAG, "playList: " + playList.get(0));
+
+            if (playList.get(0).split(",")[0].substring(0,1).equals("o")) {
+                playerType = "offense";
+            }
+            else if (playList.get(0).split(",")[0].substring(0,1).equals("d")) {
+                playerType = "defense";
+            }
+            else if (playList.get(0).split(",")[0].substring(0,1).equals("b")) {
+                playerType = "ball";
+            }
 
             this.rawX = Float.valueOf(playList.get(0).split(",")[1]);
             this.rawY = Float.valueOf(playList.get(0).split(",")[2]);
@@ -418,7 +433,20 @@ public class OffenseActivity extends Activity {
 
             canvas.save();
 
-            canvas.drawBitmap(mScaledBitmap, x, y, mPainter);
+            //canvas.drawBitmap(mScaledBitmap, x, y, mPainter);
+            mPainter.setStyle(Paint.Style.STROKE);
+            mPainter.setStrokeWidth(10);
+            canvas.drawCircle(x, y, playerSize/2, mPainter);
+            mPainter.setStrokeWidth(1);
+            if (playerType.equals("offense"))
+                mPainter.setColor(Color.RED);
+            else if (playerType.equals("defense"))
+                mPainter.setColor(Color.YELLOW);
+            else
+                mPainter.setColor(Color.parseColor("#ffa500"));
+            mPainter.setStyle(Paint.Style.FILL);
+            canvas.drawCircle(x, y, playerSize/2-5, mPainter);
+            mPainter.setColor(Color.BLACK);
 
             Log.v(TAG, "Should be a name: " + playList.get(0).split(",")[3]);
 
