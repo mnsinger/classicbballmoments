@@ -884,24 +884,24 @@
         </action>
         <action>
             <ball>125,80,21</ball>
-            <opg>65,155,jason kidd</opg>
-            <osg>235,35,jason terry</osg>
+            <opg>83,115,jason kidd</opg>
+            <osg>208,27,jason terry</osg>
             <osf>420,400,shawn marion</osf>
-            <opf>130,155,dirk nowitzki</opf>
-            <oc>0,250,tyson chandler</oc>
+            <opf>175,175,dirk nowitzki</opf>
+            <oc>30,250,tyson chandler</oc>
 
-            <dpg>150,200,mario chalmers</dpg>
+            <dpg>180,175,mario chalmers</dpg>
             <dsg>410,320,dwayne wade</dsg>
-            <dsf>245,65,lebron james</dsf>
-            <dpf>190,190,udonis haslem</dpf>
-            <dc>30,200,chris bosh</dc>
+            <dsf>255,65,lebron james</dsf>
+            <dpf>220,190,udonis haslem</dpf>
+            <dc>85,215,chris bosh</dc>
         </action>
         <action>
             <ball>180,20,20</ball>
             <opg>100,75,jason kidd</opg>
             <osg>180,20,jason terry</osg>
             <osf>420,400,shawn marion</osf>
-            <opf>220,190,dirk nowitzki</opf>
+            <opf>220,190,dirk nowitzki,screen</opf>
             <oc>60,250,tyson chandler</oc>
 
             <dpg>215,150,mario chalmers</dpg>
@@ -912,17 +912,17 @@
         </action>
         <action>
             <ball>180,20,20</ball>
-            <opg>100,75,jason kidd</opg>
+            <opg>115,155,jason kidd</opg>
             <osg>180,20,jason terry</osg>
             <osf>420,400,shawn marion</osf>
-            <opf>220,190,dirk nowitzki</opf>
-            <oc>60,250,tyson chandler</oc>
+            <opf>220,160,dirk nowitzki,screen</opf>
+            <oc>120,220,tyson chandler</oc>
 
-            <dpg>215,150,mario chalmers</dpg>
+            <dpg>205,150,mario chalmers</dpg>
             <dsg>410,320,dwayne wade</dsg>
-            <dsf>265,65,lebron james</dsf>
-            <dpf>250,190,udonis haslem</dpf>
-            <dc>140,230,chris bosh</dc>
+            <dsf>240,65,lebron james</dsf>
+            <dpf>255,160,udonis haslem</dpf>
+            <dc>190,235,chris bosh</dc>
         </action>
         <action>
             <ball>180,20,19</ball>
@@ -930,7 +930,7 @@
             <osg>180,20,jason terry</osg>
             <osf>420,400,shawn marion</osf>
             <opf>225,130,dirk nowitzki</opf>
-            <oc>185,185,tyson chandler</oc>
+            <oc>185,185,tyson chandler,screen</oc>
 
             <dpg>190,145,mario chalmers</dpg>
             <dsg>410,320,dwayne wade</dsg>
@@ -939,18 +939,18 @@
             <dc>240,240,chris bosh</dc>
         </action>
         <action>
-            <ball>180,20,19</ball>
-            <opg>125,240,jason kidd</opg>
-            <osg>180,20,jason terry</osg>
+            <ball>145,85,19</ball>
+            <opg>125,290,jason kidd</opg>
+            <osg>145,85,jason terry</osg>
             <osf>420,400,shawn marion</osf>
-            <opf>225,130,dirk nowitzki</opf>
-            <oc>185,185,tyson chandler</oc>
+            <opf>205,110,dirk nowitzki</opf>
+            <oc>170,195,tyson chandler</oc>
 
-            <dpg>190,145,mario chalmers</dpg>
+            <dpg>185,195,mario chalmers</dpg>
             <dsg>410,320,dwayne wade</dsg>
-            <dsf>215,60,lebron james</dsf>
-            <dpf>260,130,udonis haslem</dpf>
-            <dc>240,240,chris bosh</dc>
+            <dsf>295,90,lebron james</dsf>
+            <dpf>245,125,udonis haslem</dpf>
+            <dc>230,230,chris bosh</dc>
         </action>
         <action>
             <ball>110,150,18</ball>
@@ -958,7 +958,7 @@
             <osg>110,150,jason terry</osg>
             <osf>420,400,shawn marion</osf>
             <opf>190,95,dirk nowitzki</opf>
-            <oc>155,200,tyson chandler</oc>
+            <oc>155,200,tyson chandler,screen</oc>
 
             <dpg>180,230,mario chalmers</dpg>
             <dsg>410,320,dwayne wade</dsg>
@@ -967,18 +967,18 @@
             <dc>215,225,chris bosh</dc>
         </action>
         <action>
-            <ball>110,150,18</ball>
-            <opg>130,340,jason kidd</opg>
-            <osg>110,150,jason terry</osg>
-            <osf>420,400,shawn marion</osf>
-            <opf>190,95,dirk nowitzki</opf>
-            <oc>155,200,tyson chandler</oc>
+            <ball>115,200,18</ball>
+            <opg>175,375,jason kidd</opg>
+            <osg>115,200,jason terry</osg>
+            <osf>410,375,shawn marion</osf>
+            <opf>215,105,dirk nowitzki</opf>
+            <oc>160,200,tyson chandler,screen</oc>
 
-            <dpg>180,230,mario chalmers</dpg>
-            <dsg>410,320,dwayne wade</dsg>
-            <dsf>175,125,lebron james</dsf>
-            <dpf>230,120,udonis haslem</dpf>
-            <dc>215,225,chris bosh</dc>
+            <dpg>215,255,mario chalmers</dpg>
+            <dsg>410,325,dwayne wade</dsg>
+            <dsf>190,160,lebron james</dsf>
+            <dpf>250,120,udonis haslem</dpf>
+            <dc>230,235,chris bosh</dc>
         </action>
         <action>
             <ball>120,250,17</ball>
@@ -999,14 +999,14 @@
             <opg>200,410,jason kidd</opg>
             <osg>120,250,jason terry</osg>
             <osf>400,350,shawn marion</osf>
-            <opf>240,110,dirk nowitzki</opf>
-            <oc>165,175,tyson chandler</oc>
+            <opf>215,115,dirk nowitzki</opf>
+            <oc>205,160,tyson chandler</oc>
 
-            <dpg>250,280,mario chalmers</dpg>
-            <dsg>410,330,dwayne wade</dsg>
-            <dsf>210,195,lebron james</dsf>
-            <dpf>275,120,udonis haslem</dpf>
-            <dc>245,245,chris bosh</dc>
+            <dpg>260,315,mario chalmers</dpg>
+            <dsg>410,320,dwayne wade</dsg>
+            <dsf>200,220,lebron james</dsf>
+            <dpf>275,130,udonis haslem</dpf>
+            <dc>260,225,chris bosh</dc>
         </action>
         <action>
             <ball>190,120,16</ball>
@@ -1014,7 +1014,7 @@
             <osg>120,250,jason terry</osg>
             <osf>400,350,shawn marion</osf>
             <opf>190,120,dirk nowitzki</opf>
-            <oc>240,145,tyson chandler</oc>
+            <oc>240,145,tyson chandler,screen</oc>
 
             <dpg>275,350,mario chalmers</dpg>
             <dsg>410,310,dwayne wade</dsg>
@@ -1028,11 +1028,11 @@
             <osg>120,250,jason terry</osg>
             <osf>400,350,shawn marion</osf>
             <opf>190,120,dirk nowitzki</opf>
-            <oc>240,145,tyson chandler</oc>
+            <oc>240,145,tyson chandler,screen</oc>
 
             <dpg>275,350,mario chalmers</dpg>
             <dsg>410,310,dwayne wade</dsg>
-            <dsf>195,245,lebron james</dsf>
+            <dsf>220,245,lebron james</dsf>
             <dpf>275,140,udonis haslem</dpf>
             <dc>280,200,chris bosh</dc>
         </action>
@@ -1042,7 +1042,7 @@
             <osg>120,250,jason terry</osg>
             <osf>400,350,shawn marion</osf>
             <opf>190,120,dirk nowitzki</opf>
-            <oc>240,145,tyson chandler</oc>
+            <oc>240,145,tyson chandler,screen</oc>
 
             <dpg>275,350,mario chalmers</dpg>
             <dsg>410,310,dwayne wade</dsg>
@@ -1056,21 +1056,7 @@
             <osg>120,250,jason terry</osg>
             <osf>400,350,shawn marion</osf>
             <opf>190,120,dirk nowitzki</opf>
-            <oc>240,145,tyson chandler</oc>
-
-            <dpg>275,350,mario chalmers</dpg>
-            <dsg>410,310,dwayne wade</dsg>
-            <dsf>250,250,lebron james</dsf>
-            <dpf>275,140,udonis haslem</dpf>
-            <dc>280,200,chris bosh</dc>
-        </action>
-        <action>
-            <ball>430,250,14</ball>
-            <opg>200,410,jason kidd</opg>
-            <osg>120,250,jason terry</osg>
-            <osf>400,350,shawn marion</osf>
-            <opf>190,120,dirk nowitzki</opf>
-            <oc>240,145,tyson chandler</oc>
+            <oc>240,145,tyson chandler,screen</oc>
 
             <dpg>275,350,mario chalmers</dpg>
             <dsg>410,310,dwayne wade</dsg>

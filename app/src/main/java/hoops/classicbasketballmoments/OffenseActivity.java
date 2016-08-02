@@ -469,7 +469,6 @@ public class OffenseActivity extends Activity {
             if (frameNum == playList.size()) {
                 mPlayPause.setImageResource(R.drawable.replay);
                 isPlaying = 2;
-                canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
             }
 
             Log.v(TAG, "Should be a name: " + playList.get(0).split(",")[3]);
@@ -494,16 +493,14 @@ public class OffenseActivity extends Activity {
             else if (frameNum < playList.size()) {
                 canvas.drawText(playList.get(frameNum).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
             }
+            else if (frameNum == playList.size()) {
+                canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
+            }
 
             frameNum++;
-
             canvas.restore();
 
         }
-
-        /*private float xCalc() {
-            return rawX*factor + addToX - (factor*mBitmap.getHeight()/2);
-        }*/
 
         private float xCalc() {
             return rawX*factor;
@@ -520,20 +517,6 @@ public class OffenseActivity extends Activity {
         private float yCalc(int y) {
             return y*factor;
         }
-
-       /*private float xCalc(int x) {
-            return x*factor + addToX - (factor*mBitmap.getHeight()/2);
-        }*/
-
-        /*private float yCalc() {
-            return rawY*factor + addToY - (factor*mBitmap.getHeight()/2);
-        }*/
-
-
-
-        /*private float yCalc(int y) {
-            return y*factor + addToY - (factor*mBitmap.getHeight()/2);
-        }*/
 
         private boolean isOutOfScreen() {
             if (rawY < 30) {
