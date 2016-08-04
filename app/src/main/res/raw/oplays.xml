@@ -1257,10 +1257,15 @@
         </action>
     </entry>
     <entry>
-        <id>1997 NBA Finals, Game 6, 4th Quarter, :05</id>
+        <id>1997 NBA Finals, Game 6, 4th Quarter, :18</id>
         <url>https://www.youtube.com/watch?v=ZMKZ6nHfp9o&amp;t=9m12s</url>
         <court>left</court>
-        <blurb>Blurb
+        <blurb>With less than 20 seconds remaining in game 6 of the 1997 NBA Finals, the score is tied at 86. With Kerr dribbling the ball near mid court,
+            Michael Jordan sets a down screen for Scottie Pippen who gets the ball from Kerr on the left wing. Jordan tries to get the ball in the post on Bryon Russell
+            but Russell plays good defense and Jordan is unable to get position to receive a pass from Pippen. Instead, Jordan goes to the wing to receive a handoff from Pippen.
+            Jordan tries to isolate against Russell but is double teamed hard by John Stockton. Jeff Hornacek is left on the weak side trying to guard both Toni Kukoc and
+            Steve Kerr. When Jordan leaves his feet with the ball, Hornacek lunges towards Kukoc which leaves Kerr open for the pass near the top of the key.
+            Stockton is unable to recover back to Kerr in time and Kerr knocks down the jumper.
         </blurb>
         <action>
             <ball>400,200,18.0</ball>
@@ -1446,17 +1451,143 @@
         </action>
         <action>
             <ball>340,375,10.2</ball>
-            <opg>400,210,steve kerr</opg>
+            <opg>400,165,steve kerr</opg>
             <osg>340,375,michael jordan</osg>
-            <osf>190,420,scottie pippen</osf>
-            <opf>110,100,toni kukoc</opf>
+            <osf>135,405,scottie pippen</osf>
+            <opf>90,50,toni kukoc</opf>
             <oc>90,160,dennis rodman</oc>
 
-            <dpg>250,250,john stockton</dpg>
+            <dpg>270,250,john stockton</dpg>
             <dsg>270,350,bryon russell</dsg>
-            <dsf>200,400,shandon andersen</dsf>
-            <dpf>100,120,jeff hornacek</dpf>
+            <dsf>165,390,shandon andersen</dsf>
+            <dpf>130,115,jeff hornacek</dpf>
             <dc>80,210,karl malone</dc>
+        </action>
+        <action>
+            <ball>300,350,9.7</ball>
+            <opg>350,115,steve kerr</opg>
+            <osg>300,350,michael jordan</osg>
+            <osf>60,370,scottie pippen</osf>
+            <opf>90,50,toni kukoc</opf>
+            <oc>90,180,dennis rodman</oc>
+
+            <dpg>275,270,john stockton</dpg>
+            <dsg>270,330,bryon russell</dsg>
+            <dsf>130,355,shandon andersen</dsf>
+            <dpf>165,145,jeff hornacek</dpf>
+            <dc>80,210,karl malone</dc>
+        </action>
+        <action>
+            <ball>270,370,9.2</ball>
+            <opg>300,145,steve kerr</opg>
+            <osg>270,370,michael jordan</osg>
+            <osf>25,380,scottie pippen</osf>
+            <opf>90,50,toni kukoc</opf>
+            <oc>60,180,dennis rodman</oc>
+
+            <dpg>275,330,john stockton</dpg>
+            <dsg>250,350,bryon russell</dsg>
+            <dsf>110,355,shandon andersen</dsf>
+            <dpf>185,145,jeff hornacek</dpf>
+            <dc>80,210,karl malone</dc>
+        </action>
+        <action>
+            <ball>210,400,8.7</ball>
+            <opg>300,145,steve kerr</opg>
+            <osg>210,400,michael jordan</osg>
+            <osf>25,355,scottie pippen</osf>
+            <opf>90,20,toni kukoc</opf>
+            <oc>60,230,dennis rodman</oc>
+
+            <dpg>270,370,john stockton</dpg>
+            <dsg>210,380,bryon russell</dsg>
+            <dsf>110,355,shandon andersen</dsf>
+            <dpf>200,160,jeff hornacek</dpf>
+            <dc>65,240,karl malone</dc>
+        </action>
+        <action>
+            <ball>195,395,8.2</ball>
+            <opg>300,145,steve kerr</opg>
+            <osg>195,395,michael jordan</osg>
+            <osf>25,320,scottie pippen</osf>
+            <opf>90,20,toni kukoc</opf>
+            <oc>60,230,dennis rodman</oc>
+
+            <dpg>205,370,john stockton</dpg>
+            <dsg>185,390,bryon russell</dsg>
+            <dsf>75,315,shandon andersen</dsf>
+            <dpf>200,160,jeff hornacek</dpf>
+            <dc>65,240,karl malone</dc>
+        </action>
+        <action>
+            <ball>210,350,7.7</ball>
+            <opg>295,180,steve kerr</opg>
+            <osg>195,395,michael jordan</osg>
+            <osf>25,320,scottie pippen</osf>
+            <opf>90,20,toni kukoc</opf>
+            <oc>60,230,dennis rodman</oc>
+
+            <dpg>205,370,john stockton</dpg>
+            <dsg>185,390,bryon russell</dsg>
+            <dsf>75,300,shandon andersen</dsf>
+            <dpf>150,160,jeff hornacek</dpf>
+            <dc>65,240,karl malone</dc>
+        </action>
+        <action>
+            <ball>250,220,7.2</ball>
+            <opg>250,220,steve kerr</opg>
+            <osg>160,350,michael jordan</osg>
+            <osf>25,320,scottie pippen</osf>
+            <opf>90,20,toni kukoc</opf>
+            <oc>60,230,dennis rodman</oc>
+
+            <dpg>205,340,john stockton</dpg>
+            <dsg>185,390,bryon russell</dsg>
+            <dsf>75,300,shandon andersen</dsf>
+            <dpf>140,140,jeff hornacek</dpf>
+            <dc>65,240,karl malone</dc>
+        </action>
+        <action>
+            <ball>240,220,6.7</ball>
+            <opg>240,220,steve kerr</opg>
+            <osg>135,305,michael jordan</osg>
+            <osf>25,300,scottie pippen</osf>
+            <opf>90,20,toni kukoc</opf>
+            <oc>60,230,dennis rodman</oc>
+
+            <dpg>195,305,john stockton</dpg>
+            <dsg>115,370,bryon russell</dsg>
+            <dsf>75,270,shandon andersen</dsf>
+            <dpf>140,140,jeff hornacek</dpf>
+            <dc>65,240,karl malone</dc>
+        </action>
+        <action>
+            <ball>122,233,6.2</ball>
+            <opg>240,220,steve kerr</opg>
+            <osg>135,280,michael jordan</osg>
+            <osf>25,300,scottie pippen</osf>
+            <opf>90,100,toni kukoc</opf>
+            <oc>60,230,dennis rodman</oc>
+
+            <dpg>195,250,john stockton</dpg>
+            <dsg>115,290,bryon russell</dsg>
+            <dsf>75,270,shandon andersen</dsf>
+            <dpf>105,140,jeff hornacek</dpf>
+            <dc>65,240,karl malone</dc>
+        </action>
+        <action>
+            <ball>38,250,5.7</ball>
+            <opg>240,220,steve kerr</opg>
+            <osg>135,280,michael jordan</osg>
+            <osf>25,300,scottie pippen</osf>
+            <opf>90,100,toni kukoc</opf>
+            <oc>60,230,dennis rodman</oc>
+
+            <dpg>195,250,john stockton</dpg>
+            <dsg>115,290,bryon russell</dsg>
+            <dsf>75,270,shandon andersen</dsf>
+            <dpf>105,140,jeff hornacek</dpf>
+            <dc>65,240,karl malone</dc>
         </action>
     </entry>
 </feed>
