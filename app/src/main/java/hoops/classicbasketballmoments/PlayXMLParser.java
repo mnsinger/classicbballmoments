@@ -34,6 +34,44 @@ public class PlayXMLParser {
 
     }
 
+    public ArrayList<String> getListOfPlays(int offenseOrDefense, Context mContext) throws IOException, XmlPullParserException {
+        int playFile = 0;
+        if (offenseOrDefense == 0)
+            playFile = R.raw.oplays;
+        //else
+            //playFile = R.raw.dplays;
+
+        InputStream is = mContext.getResources().openRawResource(playFile);
+
+        try {
+            XmlPullParser parser = Xml.newPullParser();
+            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+            parser.setInput(is, null);
+            parser.nextTag();
+            return readIds(parser);
+        } finally {
+            is.close();
+        }
+    }
+
+    private ArrayList<String> readIds(XmlPullParser parser) throws XmlPullParserException, IOException {
+        ArrayList<String> ids = new ArrayList<String>();
+
+        parser.require(XmlPullParser.START_TAG, ns, "feed");
+        while (parser.next() != XmlPullParser.END_DOCUMENT) {
+            String name = parser.getName();
+            if (name != null && name.equals("entry")) {
+                while (parser.next() != XmlPullParser.END_TAG) {
+                    name = parser.getName();
+                    if (name != null && name.equals("id")) {
+                        ids.add(readText(parser));
+                    }
+                }
+            }
+        }
+        return ids;
+    }
+
     public ArrayList<String> parse(InputStream in) throws XmlPullParserException, IOException {
         try {
             XmlPullParser parser = Xml.newPullParser();

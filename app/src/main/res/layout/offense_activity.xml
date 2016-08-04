@@ -61,9 +61,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:id="@+id/link"
+        android:id="@+id/play_title"
+        android:textColor="#000000"
         android:layout_below="@+id/controls"
-        android:text="aaaaaaaaaaaaaaaaaaaaa"
+        android:text="title"
+        android:textSize="12sp"
+        android:paddingTop="12sp"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/link"
+        android:layout_below="@+id/play_title"
+        android:text="link"
         android:textSize="12sp"
         android:autoLink="web"
         android:paddingTop="12sp"
@@ -74,7 +87,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="text here"
+        android:text="blurb"
         android:layout_below="@id/link"
         android:id="@+id/blurb"
         android:textColor="#000000"
@@ -82,5 +95,6 @@
         android:textSize="12sp"
         android:textStyle="bold"
         android:paddingLeft="5sp"
-        android:paddingRight="5sp"/>
+        android:paddingRight="5sp"
+        android:scrollbars="vertical"/>
 </RelativeLayout>

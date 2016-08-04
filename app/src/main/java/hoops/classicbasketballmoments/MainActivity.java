@@ -17,13 +17,20 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class MainActivity extends FragmentActivity {
+    public static String TAG = "MainActivity";
     static final int NUM_ITEMS = 10;
-    private static String[] sOffenses = {
+    /*private static String[] sOffenses = {
             "2016 NBA Finals, Game 7, 4th Quarter, 1:09",
             "2013 NBA Finals, Game 7, 4th Quarter, :39",
             "2011 NBA Finals, Game 2, 4th Quarter, :34"
-    };
+    };*/
+    private static ArrayList<String> sOffenses;
     private static String[] sDefenses = {"1-3-1", "2-3"};
 
     MyAdapter mAdapter;
@@ -42,6 +49,16 @@ public class MainActivity extends FragmentActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(mPager);
+
+        PlayXMLParser mParser = new PlayXMLParser();
+        try {
+            sOffenses = mParser.getListOfPlays(0, getApplicationContext());
+            Log.v(TAG, "sOffenses: " + sOffenses.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -129,7 +146,7 @@ public class MainActivity extends FragmentActivity {
 
             Intent mIntent = new Intent(mContext, OffenseActivity.class);
             mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            mIntent.putExtra("oName", sOffenses[position]);
+            mIntent.putExtra("oName", sOffenses.get(position));
             mContext.startActivity(mIntent);
 
         }

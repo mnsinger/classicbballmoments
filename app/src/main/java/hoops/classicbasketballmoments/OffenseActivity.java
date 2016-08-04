@@ -11,6 +11,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -41,7 +42,7 @@ public class OffenseActivity extends Activity {
 
     private RelativeLayout mFrame;
     private ImageView mCourt;
-    private TextView mBlurb, mLink;
+    private TextView mTitle, mLink, mBlurb;
     private ImageButton mPlayPause, mStep, mBackstep, mFaster, mSlower;
     private int mDisplayWidth, mDisplayHeight, shotClockX, shotClockY, REFRESH_RATE = 500;
     private float addToX, addToY;
@@ -63,8 +64,10 @@ public class OffenseActivity extends Activity {
 
         mFrame = (RelativeLayout) findViewById(R.id.frame);
         mCourt = (ImageView) findViewById(R.id.court);
+        mTitle = (TextView)  findViewById(R.id.play_title);
         mLink = (TextView) findViewById(R.id.link);
         mBlurb = (TextView) findViewById(R.id.blurb);
+        mBlurb.setMovementMethod(new ScrollingMovementMethod());
         mPlayPause = (ImageButton) findViewById(R.id.play_pause);
         mStep = (ImageButton) findViewById(R.id.step);
         mBackstep = (ImageButton) findViewById(R.id.backstep);
@@ -93,8 +96,9 @@ public class OffenseActivity extends Activity {
         ArrayList<String> playActions = new ArrayList<>();
         try {
             playActions = mParser.getPlay(offenseName, 0, getApplicationContext());
+            mTitle.setText(Html.fromHtml("<b>" + mParser.mPlayName + "</b>"));
             mLink.setText(mParser.mUrl);
-            mBlurb.setText(Html.fromHtml(mParser.mPlayName + "<br/><br/>" + mParser.mBlurb));
+            mBlurb.setText(Html.fromHtml(mParser.mBlurb));
             if (mParser.mCourt.equals("right")) {
                 shotClockX = 20;
                 shotClockY = 40;
@@ -153,7 +157,7 @@ public class OffenseActivity extends Activity {
                 playActionsBall.add(action);
         }
 
-        adjustPositioningForScreen();
+        //adjustPositioningForScreen();
 
         //int oPlayer = R.drawable.odot;
         //int dPlayer = R.drawable.ddot;
@@ -189,18 +193,21 @@ public class OffenseActivity extends Activity {
 
         mPlayPause.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                // currently showing play button
                 if (isPlaying == 1) {
                     isPlaying = 0;
                     pause();
-                } else if (isPlaying == 0) {
+                }
+                // currently showing pause button
+                else if (isPlaying == 0) {
                     isPlaying = 1;
                     play();
                 }
+                // currently showing replay button
                 else if (isPlaying == 2) {
                     isPlaying = 1;
                     reset();
                 }
-                //isPlaying = !isPlaying;
             }
         });
 
@@ -243,6 +250,8 @@ public class OffenseActivity extends Activity {
     }
 
     public void stepBack() {
+
+        isPlaying = 0;
 
         o1.stepBack();
         o2.stepBack();
@@ -383,8 +392,7 @@ public class OffenseActivity extends Activity {
 
     public class PlayerView extends View {
 
-        private float rawX = 0, rawY = 0;
-        private float x = 0, y = 0;
+        private float rawX = 0, rawY = 0, prevX = 0, prevY = 0, x = 0, y = 0;
         private int frameNum = 0;
         private ArrayList<String> playList;
         private final Paint mPainter = new Paint();
@@ -416,15 +424,23 @@ public class OffenseActivity extends Activity {
             this.x = xCalc();
             this.y = yCalc();
 
+            this.prevX = x;
+            this.prevY = y;
+
             Log.v(TAG, "initial x and y pos: " + x + " and " + y);
 
+            frameNum++;
+
             mPainter.setAntiAlias(true);
+
+            // onDraw() gets called now...
         }
 
         public void drawPlayerOrBall(Canvas canvas) {
 
             // special player action change shape, color
-            if (frameNum < playList.size() && playList.get(frameNum).split(",").length > 4) {
+            // since views are drawn at the end and canvas is drawn immediately, need to look backwards for screens and actions
+            if (frameNum-1 >= 0 && frameNum-1 < playList.size() && playList.get(frameNum-1).split(",").length > 4) {
                 mPainter.setStyle(Paint.Style.STROKE);
                 mPainter.setStrokeWidth(10);
                 canvas.drawRect(x-playerSize / 2, y-playerSize/2, x+playerSize / 2, y+playerSize/2, mPainter);
@@ -434,8 +450,6 @@ public class OffenseActivity extends Activity {
                 mPainter.setStyle(Paint.Style.FILL);
                 canvas.drawRect(x-playerSize / 2 + 5, y-playerSize/2 + 5, x+playerSize / 2 - 5, y+playerSize/2 - 5, mPainter);
                 mPainter.setColor(Color.BLACK);
-
-
             }
             else {
 
@@ -447,7 +461,7 @@ public class OffenseActivity extends Activity {
                 if (playerType.equals("offense")) {
                     mPainter.setColor(Color.YELLOW);
                 } else if (playerType.equals("defense")) {
-                    mPainter.setColor(Color.WHITE);
+                    mPainter.setColor(Color.RED);
                 } else
                     mPainter.setColor(Color.parseColor("#ffa500"));
 
@@ -456,6 +470,8 @@ public class OffenseActivity extends Activity {
                 mPainter.setColor(Color.BLACK);
 
             }
+
+            canvas.drawLine(prevX, prevY, x, y, mPainter);
 
         }
 
@@ -471,7 +487,7 @@ public class OffenseActivity extends Activity {
                 isPlaying = 2;
             }
 
-            Log.v(TAG, "Should be a name: " + playList.get(0).split(",")[3]);
+            Log.v(TAG, "Should be a name: frameNum: " + frameNum + "/" + playList.size() + " " + playList.get(0).split(",")[3]);
 
             mPainter.setTextSize(48f);
 
@@ -497,7 +513,6 @@ public class OffenseActivity extends Activity {
                 canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
             }
 
-            frameNum++;
             canvas.restore();
 
         }
@@ -527,7 +542,9 @@ public class OffenseActivity extends Activity {
         }
 
         private void reset() {
-            frameNum = 1;
+            // Even before start() is called, the 0th frame is drawn
+            // The 0th frame gets drawn on view construction
+            frameNum = 0;
             start();
         }
 
@@ -550,10 +567,11 @@ public class OffenseActivity extends Activity {
                     // Otherwise, request that the BubbleView be redrawn.
                     if (frameNum == playList.size())
                         stop();
-                    else
+                    else {
                         moveWhileOnScreen();
-
-                    PlayerView.this.postInvalidate();
+                        PlayerView.this.postInvalidate();
+                        frameNum++;
+                    }
 
                 }
             }, 1500, REFRESH_RATE, TimeUnit.MILLISECONDS);
@@ -576,19 +594,21 @@ public class OffenseActivity extends Activity {
             stop();
             moveWhileOnScreen();
             PlayerView.this.postInvalidate();
-
+            frameNum++;
         }
 
         private void stepBack() {
             Log.v(TAG, "IN stepBack!");
+            mPlayPause.setImageResource(R.drawable.play);
             if (frameNum <= 1)
                 return;
 
             stop();
             frameNum=frameNum-2;
+            Log.v(TAG, "IN stepBack! FrameNum now equals: " + frameNum);
             moveWhileOnScreen();
             PlayerView.this.postInvalidate();
-
+            frameNum++;
         }
 
         private synchronized void moveWhileOnScreen() {
@@ -598,6 +618,15 @@ public class OffenseActivity extends Activity {
             if (frameNum < playList.size()) {
                 this.rawX = Float.valueOf(playList.get(frameNum).split(",")[1]);
                 this.rawY = Float.valueOf(playList.get(frameNum).split(",")[2]);
+
+                if (frameNum > 0) {
+                    this.prevX = xCalc(Integer.valueOf(playList.get(frameNum - 1).split(",")[1]));
+                    this.prevY = yCalc(Integer.valueOf(playList.get(frameNum - 1).split(",")[2]));
+                }
+                else {
+                    this.prevX = xCalc();
+                    this.prevY = yCalc();
+                }
                 this.x = xCalc();
                 this.y = yCalc();
                 //frameNum++;
