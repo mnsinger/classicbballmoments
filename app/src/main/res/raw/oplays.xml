@@ -1577,48 +1577,50 @@
         </action>
     </entry>
     <entry>
-    <id>1993 NBA Finals, Game 6, 4th Quarter</id>
+    <id>1993 NBA Finals, Game 6, 4th Quarter, :14</id>
     <url>https://www.youtube.com/watch?v=GnAr4I3-Z48&amp;t=1m15s</url>
     <court>left</court>
-    <blurb>Paxson for 3!
+    <blurb>With 14 seconds left, trailing the Suns by a score of 96-98, the Bulls inbound the ball in their backcourt. Michael Jordan inbounds to BJ Armstrong and then Armstrong passes back to Jordan who is guarded by Kevin Johnson. While Jordan is dribbling up
+        the court, Pippen flashes to the high post and receives the pass from Jordan. Pippen is guarded by Barkley but beats him easily and gets in the paint. When Mark West and Danny Ainge leave their men
+        to stop Pippen, Pippen passes to an open Horace Grant on the block. West and Ainge recover to Grant but he kicks it out to a wide open John Paxson who hits the game winning 3.
     </blurb>
         <action>
-            <ball>750,250,11</ball>
+            <ball>-750,250,11</ball>
             <opg>435,300,john paxson</opg>
-            <osg>750,250,michael jordan</osg>
+            <osg>-750,250,michael jordan</osg>
             <osf>55,160,scottie pippen,color</osf>
-            <opf>675,40,bj armstrong</opf>
+            <opf>-675,40,bj armstrong</opf>
             <oc>60,335,horace grant</oc>
 
-            <dpg>600,250,kevin johnson</dpg>
+            <dpg>-600,250,kevin johnson</dpg>
             <dsg>340,350,danny ainge</dsg>
             <dsf>70,180,charles barkley,color</dsf>
             <dpf>220,60,dan majerle</dpf>
             <dc>60,310,mark west</dc>
         </action>
         <action>
-            <ball>750,250,10.5</ball>
+            <ball>-750,250,10.5</ball>
             <opg>260,420,john paxson</opg>
-            <osg>750,250,michael jordan</osg>
+            <osg>-750,250,michael jordan</osg>
             <osf>200,185,scottie pippen,color</osf>
-            <opf>485,40,bj armstrong</opf>
+            <opf>-485,40,bj armstrong</opf>
             <oc>60,335,horace grant</oc>
 
-            <dpg>600,250,kevin johnson</dpg>
+            <dpg>-600,250,kevin johnson</dpg>
             <dsg>340,350,danny ainge</dsg>
             <dsf>150,200,charles barkley,color</dsf>
             <dpf>380,110,dan majerle</dpf>
             <dc>60,310,mark west</dc>
         </action>
         <action>
-            <ball>750,250,10.0</ball>
+            <ball>-750,250,10.0</ball>
             <opg>260,420,john paxson</opg>
-            <osg>750,250,michael jordan</osg>
+            <osg>-750,250,michael jordan</osg>
             <osf>310,240,scottie pippen,color</osf>
             <opf>415,40,bj armstrong</opf>
             <oc>50,415,horace grant</oc>
 
-            <dpg>600,250,kevin johnson</dpg>
+            <dpg>-600,250,kevin johnson</dpg>
             <dsg>290,350,danny ainge</dsg>
             <dsf>225,200,charles barkley,color</dsf>
             <dpf>325,60,dan majerle</dpf>
@@ -1627,12 +1629,12 @@
         <action>
             <ball>450,210,9.5</ball>
             <opg>250,460,john paxson</opg>
-            <osg>750,250,michael jordan</osg>
+            <osg>-750,250,michael jordan</osg>
             <osf>370,250,scottie pippen,color</osf>
             <opf>370,40,bj armstrong</opf>
             <oc>50,415,horace grant</oc>
 
-            <dpg>600,250,kevin johnson</dpg>
+            <dpg>-600,250,kevin johnson</dpg>
             <dsg>290,350,danny ainge</dsg>
             <dsf>290,220,charles barkley,color</dsf>
             <dpf>275,60,dan majerle</dpf>
@@ -1641,12 +1643,12 @@
         <action>
             <ball>400,250,9.0</ball>
             <opg>250,460,john paxson</opg>
-            <osg>750,250,michael jordan</osg>
+            <osg>-750,250,michael jordan</osg>
             <osf>400,250,scottie pippen,color</osf>
             <opf>300,40,bj armstrong</opf>
             <oc>80,415,horace grant</oc>
 
-            <dpg>600,250,kevin johnson</dpg>
+            <dpg>-600,250,kevin johnson</dpg>
             <dsg>270,350,danny ainge</dsg>
             <dsf>370,220,charles barkley,color</dsf>
             <dpf>230,65,dan majerle</dpf>
