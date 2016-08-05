@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity {
             "2011 NBA Finals, Game 2, 4th Quarter, :34"
     };*/
     private static ArrayList<String> sOffenses;
-    private static String[] sDefenses = {"1-3-1", "2-3"};
+    private static String[] sDefenses = {"Coming soon..."};
 
     MyAdapter mAdapter;
 
@@ -63,7 +63,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     public static class MyAdapter extends FragmentPagerAdapter {
-        private String tabTitles[] = new String[] { "Offense", "Defense" };
+        private String tabTitles[] = new String[] { "All-time", "Recent" };
         final int PAGE_COUNT = 2;
 
         public MyAdapter(FragmentManager fm) {

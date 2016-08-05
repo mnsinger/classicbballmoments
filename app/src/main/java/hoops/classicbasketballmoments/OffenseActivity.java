@@ -438,20 +438,33 @@ public class OffenseActivity extends Activity {
 
         public void drawPlayerOrBall(Canvas canvas) {
 
+            boolean colorFlag = false;
+            boolean screenFlag = false;
+
             // special player action change shape, color
             // since views are drawn at the end and canvas is drawn immediately, need to look backwards for screens and actions
             if (frameNum-1 >= 0 && frameNum-1 < playList.size() && playList.get(frameNum-1).split(",").length > 4) {
-                mPainter.setStyle(Paint.Style.STROKE);
-                mPainter.setStrokeWidth(10);
-                canvas.drawRect(x-playerSize / 2, y-playerSize/2, x+playerSize / 2, y+playerSize/2, mPainter);
-                mPainter.setColor(Color.YELLOW);
-                mPainter.setStrokeWidth(1);
 
-                mPainter.setStyle(Paint.Style.FILL);
-                canvas.drawRect(x-playerSize / 2 + 5, y-playerSize/2 + 5, x+playerSize / 2 - 5, y+playerSize/2 - 5, mPainter);
-                mPainter.setColor(Color.BLACK);
+                for (String extra : playList.get(frameNum-1).split(",")) {
+                    switch (extra) {
+                        case "screen":
+                            screenFlag = true;
+                            mPainter.setStyle(Paint.Style.STROKE);
+                            mPainter.setStrokeWidth(10);
+                            canvas.drawRect(x-playerSize / 2, y-playerSize/2, x+playerSize / 2, y+playerSize/2, mPainter);
+                            mPainter.setColor(Color.YELLOW);
+                            mPainter.setStrokeWidth(1);
+
+                            mPainter.setStyle(Paint.Style.FILL);
+                            canvas.drawRect(x-playerSize / 2 + 5, y-playerSize/2 + 5, x+playerSize / 2 - 5, y+playerSize/2 - 5, mPainter);
+                            mPainter.setColor(Color.BLACK);
+                            break;
+                        case "color":
+                            colorFlag = true;
+                    }
+                }
             }
-            else {
+            if (!screenFlag) {
 
                 mPainter.setStyle(Paint.Style.STROKE);
                 mPainter.setStrokeWidth(10);
@@ -459,9 +472,15 @@ public class OffenseActivity extends Activity {
                 mPainter.setStrokeWidth(1);
 
                 if (playerType.equals("offense")) {
-                    mPainter.setColor(Color.YELLOW);
+                    if (colorFlag)
+                        mPainter.setColor(Color.YELLOW);
+                    else
+                        mPainter.setColor(Color.LTGRAY);
                 } else if (playerType.equals("defense")) {
-                    mPainter.setColor(Color.RED);
+                    if (colorFlag)
+                        mPainter.setColor(Color.RED);
+                    else
+                        mPainter.setColor(Color.DKGRAY);
                 } else
                     mPainter.setColor(Color.parseColor("#ffa500"));
 
@@ -493,7 +512,7 @@ public class OffenseActivity extends Activity {
 
             // player aka not ball
             if (!playerType.equals("ball")) {
-                float textX, textY = y - playerSize;
+                float textX, textY = y - playerSize/2 - 5*factor;
                 if (frameNum < playList.size()) {
                     // Write the name so it shows in the screen
                     if (isOutOfScreen()) {
@@ -503,11 +522,14 @@ public class OffenseActivity extends Activity {
                 if (playerType.equals("offense")) {
                     textY = y + playerSize;
                 }
-                canvas.drawText(/*playerName + " " +*/ (int)rawX + ", " + (int)rawY, x, textY, mPainter);
+                else {
+                    //textY = y;
+                }
+                canvas.drawText(playerName /*+ " " + (int)rawX + ", " + (int)rawY*/, x, textY, mPainter);
             }
             // ball
             else if (frameNum < playList.size()) {
-                canvas.drawText(playList.get(frameNum).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
+                canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
             }
             else if (frameNum == playList.size()) {
                 canvas.drawText(playList.get(frameNum-1).split(",")[3], xCalc(shotClockX), yCalc(shotClockY), mPainter);
